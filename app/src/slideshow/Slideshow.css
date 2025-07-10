@@ -1,0 +1,59 @@
+/* SlideShow.css */
+
+body {
+    background-color: rgb(175, 195, 175);
+    margin: 0;
+    padding: 0;
+}
+
+.slideshow-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.slideshow-image {
+    width: 600px;
+    height: 360px;
+    object-fit: cover;
+    border: 2px solid green;
+}
+
+.slideshow-buttons {
+    position: absolute;
+    bottom: 230px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.slideshow-buttons button {
+    margin: 0 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.slideshow-buttons button:first-child {
+    background-color: blue;
+    color: white;
+}
+
+.slideshow-buttons button:last-child {
+    background-color: red;
+    color: white;
+}
+
+h2 {
+    color: #0f0713;
+    font-size: 30px;
+    position: absolute;
+    top: 40vh;
+    left: 50%;
+    z-index: 100;
+    width:30%;
+    transform: translateX(-50%);
+}
