@@ -15,8 +15,6 @@ import Portfolio from "./pages/portfolio";
 import Services from "./pages/services";
 import Home from "./pages/home";
 
-
-
 //Home
 //Contact
 //Services and Pricing
@@ -25,7 +23,7 @@ import Home from "./pages/home";
 
 //if want to add stuff to navbar, start here
 const routes = [
-  //["/", Home],
+  ["/home", Home],
   ["/about", About],
   ["/contact", Contact],
   ["/portfolio", Portfolio],

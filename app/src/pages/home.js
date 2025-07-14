@@ -1,25 +1,13 @@
-// pages/about.js
+// pages/home.js
 
 import React from "react";
-
+import Slider from "../slideshow/slider";
 
 //TODO: make these clickable
 const Home = () => {
     return (
-        <div
-            style={{
-                display: "flex",
-                justifyContent: "centre",
-                alignItems: "centre",
-                height: "100vh",
-            }}
-        >
-            <h1>
-                Office: 304-581-3885
-                Cell: 856-373-3455
-            </h1>
-
-            
+        <div className = "Slider">
+            <Slider/>
         </div>
     );
 };

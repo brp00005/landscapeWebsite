@@ -1,6 +1,17 @@
 //SlideShow.js
 import React, { useState, useEffect } from 'react';
-import './SlideShow.css';
+import './Slideshow.css';
+import Contact from '../pages/contact';
+import {
+	BrowserRouter as Router,
+	Routes,
+	Route,
+	Link,
+} from "react-router-dom";
+
+
+//todo: make a little bar at the bottom of the slideshow or dots to change slides  
+
 
 const Slideshow = ({ images }) => {
 	const [currentIndex, setCurrentIndex] = useState(0);
@@ -18,27 +29,29 @@ const Slideshow = ({ images }) => {
 	};
 
 	useEffect(() => {
-		const intervalId = setInterval(goToNextSlide, 3000);
+		const intervalId = setInterval(goToNextSlide, 5000);
 
 		return () => clearInterval(intervalId);
 	}, [images.length]);
 
 	return (
 		<div className="slideshow-container">
-			<h2>
-				Geeksforgeeks Slideshow Component with
-				useEffect and useState
-			</h2>
 			<br />
 			<img
 				src={images[currentIndex]}
 				alt={`Slide ${currentIndex}`}
 				className="slideshow-image"
 			/>
-			<div className="slideshow-buttons">
+
+			<Link to="/contact">
+				<button className="contact-button">Contact Us!</button>
+			</Link>
+
+			
+			{/* <div className="slideshow-buttons">
 				<button onClick={goToPreviousSlide}>Previous</button>
 				<button onClick={goToNextSlide}>Next</button>
-			</div>
+			</div> */}
 		</div>
 	);
 };
