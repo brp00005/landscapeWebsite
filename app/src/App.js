@@ -15,6 +15,8 @@ import Portfolio from "./pages/portfolio";
 import Services from "./pages/services";
 import Home from "./pages/home";
 
+import ResponsiveAppBar from "./components/mNav/mNav";
+
 //Home
 //Contact
 //Services and Pricing
@@ -38,10 +40,14 @@ function genRoutes(array){
 
 function App() {
     return (
+
         <Router>
-            <Navbar />
+            <ResponsiveAppBar/>
             <Routes>{genRoutes(routes)}</Routes>
         </Router>
+
+
+
     );
 }
 
