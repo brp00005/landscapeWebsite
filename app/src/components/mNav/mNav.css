@@ -1,17 +1,16 @@
 .logo-text {
-    margin-right: 16px;
-    display: none;
-    font-family: monospace;
+    margin-right: 20px;
+    display: none;  
     font-weight: 700;
     letter-spacing: 0.3rem;
-    color: black;
+    color: green;
     text-decoration: none;
-    font: times;
   }
   
   .logo-icon {
     display: none;
-    margin-right: 8px;
+    margin-right: 20px;
+    color: green;
   }
   
   @media (min-width: 900px) {
@@ -26,7 +25,7 @@
     display: flex;
     margin-right: 8px;
     font-family: monospace;
-    font-weight: 700;
+    font-weight: 900;
     letter-spacing: 0.3rem;
     color: #005500;
     text-decoration: none;
@@ -39,11 +38,22 @@
     }
   }
   
+  .nav-container {
+    display: flex;
+    align-items: center;
+    margin-top: 32px;
+    margin-left: auto;
+    gap: 90px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+
   .nav-button {
-    margin-right: 30px;
-    color: green;
-    display: block;
-    padding: 15px 30px;
+    margin-right: 40px;
+    align-items: center;
+    height: 100%; 
+    font-family: 'Times New Roman', Times, serif;
+    
   }
   
   .menu-text {

@@ -8,11 +8,12 @@ export const LogoText = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     display: 'flex',
   },
-  fontFamily: 'monospace',
+  fontFamily: 'times',
   fontWeight: 700,
-  letterSpacing: '.3rem',
+  letterSpacing: '.1rem',
   color: 'black',
   textDecoration: 'none',
+  fontSize: 20
 }));
 
 // mobile logo
@@ -34,3 +35,20 @@ export const MobileLogoText = styled(Typography)(({ theme }) => ({
 export const MenuItemText = styled(Typography)({
   textAlign: 'center',
 });
+
+//navbar button text: 
+export const navbarText = styled(Typography)(({ theme }) => ({
+  marginRight: theme.spacing(2),
+  display: 'none',
+  [theme.breakpoints.up('md')]: {
+    display: 'flex',
+  },
+  justifyContent: 'flex-end',
+  width: '100%',
+  fontFamily: 'times',
+  fontWeight: 1000,
+  letterSpacing: '.1rem',
+  color: 'black',
+  textDecoration: 'none',
+  fontSize: 20,
+}));
