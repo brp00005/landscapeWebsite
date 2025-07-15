@@ -2,17 +2,17 @@
     background-color: rgb(8, 8, 63);
     border-radius: 7px;
     position: relative;
-    padding: 30px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: auto;
-    padding-bottom: 100px;
+    height: 50vh;
+    padding-bottom: 0px;
   }
   
   @media (max-width: 768px) {
     .DetailsBarWrapper {
-      padding-bottom: 80px;
+      padding-bottom: 1vh;
       grid-row: 2;
     }
   }
@@ -33,14 +33,14 @@
   .TextTwo {
     text-align: center;
     color: #fff;
-    font-size: 30px;
+    font-size: 2vh;
     line-height: 18px;
   }
   
   .ContactsWrapper {
     display: flex;
-    width: 200px;
-    height: 10px;
+    width: 50vh;
+    height: 1vh;
     margin-top: 50px;
     cursor: pointer;
     text-decoration: none;

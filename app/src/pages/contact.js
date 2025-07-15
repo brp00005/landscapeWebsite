@@ -1,18 +1,48 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import './contactPieces/contact.css';
+import DetailsBar from './contactPieces/detailsBar';
 
 function FormPage() {
-  return (
-    <div className="form-container">
-      <h1>Contact</h1>
-      <form>
-        <input type="text" placeholder="Name" />
-        <input type="email" placeholder="Email" />
-        <textarea placeholder="Message" />
-        <button type="submit">Send</button>
-      </form>
-    </div>
-  );
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs
+            .sendForm(
+                process.env.REACT_APP_SERVICE_ID,
+                process.env.REACT_APP_TEMPLATE_ID,
+                form.current,
+                process.env.REACT_APP_PUBLIC_KEY
+            )
+            .then(
+                () => alert('Message sent!'),
+                (error) => {
+                    alert('Failed to send message');
+                    alert(process.env.REACT_APP_PUBLIC_KEY);
+                    console.error(error);
+                }
+            );
+    };
+
+    return (
+        <div>
+        
+            <DetailsBar/>
+            <form className="form-container" ref={form} onSubmit={sendEmail}>
+                <h1>Contact Form</h1>
+                <div className='input'>
+                    <input type="text" name="user_name" placeholder="Name" required />
+                    <input type="email" name="user_email" placeholder="Email address" required />
+                </div>
+                <div>
+                    <textarea name="message" placeholder="Message" required />
+                </div>
+                <input type="submit" value="Submit" id="input-submit" />
+            </form>
+        </div>
+    );
 }
 
 export default FormPage;

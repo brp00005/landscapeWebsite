@@ -41,9 +41,6 @@ const DetailsBar = () => {
                 </a>
             </div>
 
-            <div>
-                logo here
-            </div>
         </div>
     );
 };
