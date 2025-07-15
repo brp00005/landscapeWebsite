@@ -14,11 +14,11 @@ function ResponsiveAppBar() {
   return (
     <AppBar
       position="static"
-      sx={{
-        backgroundColor: '#fff',
+      style={{
+        backgroundColor: 'green',
         color: 'black',
         opacity: 0.8,
-        
+        boxShadow: 'none'
       }}
     >
       <Container maxWidth="xl">

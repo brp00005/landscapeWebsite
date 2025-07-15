@@ -4,9 +4,9 @@ import React from "react";
 import "./App.css";
 import Navbar from "./components/navbar";
 import {
-    BrowserRouter as Router,
-    Routes,
-    Route,
+  BrowserRouter as Router,
+  Routes,
+  Route,
 } from "react-router-dom";
 //import Home from "./pages";
 import About from "./pages/about";
@@ -32,23 +32,23 @@ const routes = [
   ["/services", Services],
 ];
 
-function genRoutes(array){
+function genRoutes(array) {
   return array.map(([path, Component], i) => (
     <Route key={i} path={path} element={<Component />} />
   ));
 }
 
 function App() {
-    return (
+  return (
 
-        <Router>
-            <ResponsiveAppBar/>
-            <Routes>{genRoutes(routes)}</Routes>
-        </Router>
+    <Router>
+      <ResponsiveAppBar />
+      <Routes>{genRoutes(routes)}</Routes>
+    </Router>
 
 
 
-    );
+  );
 }
 
 export default App;

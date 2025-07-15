@@ -1,14 +1,14 @@
 // pages/home.js
 
 import React from "react";
-import Slider from "../slideshow/slider";
 import ImageCarousel from "../slideshow/carousel";
+
 
 //TODO: make these clickable
 const Home = () => {
     return (
         <div>
-            <ImageCarousel/>
+            <ImageCarousel />
         </div>
     );
 };

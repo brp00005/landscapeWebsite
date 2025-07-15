@@ -15,7 +15,7 @@ const About = () => {
             }}
         >
 
-            
+
             <h1>
                 All Pro Landscaping is a ..... based out of WV Owned by Larry Reaville
 
