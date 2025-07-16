@@ -46,9 +46,13 @@ class CardBody extends React.Component {
 
 class Card extends React.Component {
     render() {
+        /* magic */
+        const { title, text, image } = this.props;
+
         return (
+
             <article className="card">
-                <CardHeader image={Skyline} />
+                <CardHeader image={image} />
                 <CardBody
                     title="Name"
                     text="Description"
@@ -58,21 +62,64 @@ class Card extends React.Component {
     }
 }
 
+//traversing directory: https://fmennen.de/post/getting-all-files-in-a-directory-using-java-script
+
+
+/* function traverseDirectory(directoryPath) {
+    const fs = require('fs');
+    const files = fs.readdirSync(directoryPath);
+
+
+    const arr = new Array();
+
+        files.forEach((file) => {
+            const filePath = directoryPath + '/' + file;
+            const stats = fs.statSync(filePath);
+
+            if (stats.isDirectory()) {
+                traverseDirectory(filePath); // recursively call the function for subdirectories
+            } else {
+                arr.push(filePath)
+            }
+        }
+    );
+    return arr;
+} */
+
+function cardGenerator(titles, texts, images) {
+    return titles.map((title, i) => (
+        <Card key={i} title={title} text={texts[i]} image={images[i]} />
+    ));
+}
+
+
+
+
 /* grid, then card, then title/description etc etc. make fx to go ahead and load in names of employees and such */
 /* one owner, 6 employees */
 class About extends React.Component {
+
+
+
     render() {
+        const names = ["n1", "n2", "n3", "n4", "n5", "n6", "n7"];
+        const descriptions = ["d1", "d2", "d3", "d4", "d5", "d6", "d7"];
+        const imageArray = [
+            require('./employees/n1.jpg'),
+            require('./employees/n2.jpg'),
+            require('./employees/n3.jpg'),
+            require('./employees/n4.jpg'),
+            require('./employees/n5.jpg'),
+            require('./employees/n6.jpg'),
+            require('./employees/n7.jpg'),
+        ];
+
+
         return (
             <div className="grid">
-                
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                
+
+                {cardGenerator(names, descriptions, imageArray)}
+
             </div>
         );
     }

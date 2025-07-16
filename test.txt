@@ -54,3 +54,11 @@ Contact godaddy for stuff
 for api keys: 
 https://github.com/orgs/community/discussions/161673
 deploy key in environment variable in godaddy, call support
+
+broken fs: "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
+  }
+
+  add this to root of package.json folder 
