@@ -1,19 +1,22 @@
 .DetailsBarWrapper {
-    background-color: rgb(8, 8, 63);
+    background-color: none;
     border-radius: 7px;
     position: relative;
-    padding: 10px;
+    padding: 0px;
+    width: 40vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 50vh;
-    padding-bottom: 0px;
+    height: 40vh;
+    margin-left: 50vw;
+    margin-right: 50vw;
+    transform: translateX(-50%);
   }
   
-  @media (max-width: 768px) {
+  @media (max-width: 3vw) {
     .DetailsBarWrapper {
-      padding-bottom: 1vh;
-      grid-row: 2;
+      padding-bottom: 0vh;
+      grid-row: 0;
     }
   }
   
@@ -25,31 +28,44 @@
   
   .TextOne {
     text-align: center;
-    color: #fff;
-    font-size: 50px;
+    color: black;
+    font-size: 3vh;
     font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    text-wrap: 'normal';
   }
   
   .TextTwo {
     text-align: center;
-    color: #fff;
+    color: black;
     font-size: 2vh;
-    line-height: 18px;
+    line-height: 1vh;
+    font-family: 'Times New Roman', Times, serif;
+    padding-top: 1vh;
+    text-wrap: 'normal';
+    max-width: 40vh;
+    line-height: 3vh;
   }
-  
+  /* justify content is h centering, align-items is v centering */
   .ContactsWrapper {
     display: flex;
-    width: 50vh;
+    width: 30vh;
     height: 1vh;
-    margin-top: 50px;
-    cursor: pointer;
+    margin-top: 3vh;
+    /* cursor: pointer; */
     text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    justify-content: center;
+    align-items: center;
   }
   
   .ContactText {
-    color: #fff;
-    font-size: 30px;
+    color: black;
+    font-size: 2vh;
     margin-left: 0px;
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 1vh;
+    
   }
   
   

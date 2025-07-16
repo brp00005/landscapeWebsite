@@ -1,3 +1,11 @@
+.overall {
+    padding: 2.5vh;
+    border: 3px solid black;
+    border-radius: 1vh;
+    background-color: white;
+    width: 50vw; 
+}
+
 .form-container {
     width: 50vh;
     margin: 0vh auto;
@@ -31,3 +39,4 @@ button {
     color: white;
     border: none;
 }
+

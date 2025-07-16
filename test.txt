@@ -1,0 +1,56 @@
+npm start
+
+version error for 0.0.0?
+change version of react-scripts to 1.0.2 in package file 
+npm install react-scripts
+
+for breaking home link: npm install react-material-ui-carousel --legacy-peer-deps
+
+
+to learn: block level elements 
+
+dependency conflict? 
+try: 
+npm config set legacy-peer-deps true
+npm i
+
+element not showing and 0x0 in inspect element highlight? 
+do pascal case, eg ContactButton 
+
+Responsive stuff: https://blog.logrocket.com/using-react-responsive-to-implement-responsive-design/
+npm i -S react-responsive
+
+
+{/* Mobile menu */}
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: 'flex-end' }}>
+            <IconButton
+              size="large"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              anchorEl={anchorElNav}
+              anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+              keepMounted
+              transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+            >
+              {routes.map((route) => (
+                <MenuItem key={route.text} onClick={handleCloseNavMenu}>
+                  <Button component={RouterLink} to={route.href} className="nav-button">
+                    {route.text}
+                  </Button>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
+
+          
+
+Contact godaddy for stuff
+for api keys: 
+https://github.com/orgs/community/discussions/161673
+deploy key in environment variable in godaddy, call support
