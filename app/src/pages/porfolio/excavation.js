@@ -12,9 +12,7 @@ const Excavation = () => {
                 height: "100vh",
             }}
         >
-            <h1>
-                landscaping
-            </h1>
+            
         </div>
     );
 };

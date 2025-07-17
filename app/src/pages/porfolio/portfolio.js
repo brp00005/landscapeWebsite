@@ -102,13 +102,9 @@ class Portfolio extends React.Component {
         const names = ["Mowing", "Landscaping", "Excavation"];
         const descriptions = ["", "", ""];
         const imageArray = [
-            require('./landImgs/n1.jpg'),
-            require('./landImgs/n2.jpg'),
-            require('./landImgs/n3.jpg'),
-            require('./landImgs/n4.jpg'),
-            require('./landImgs/n5.jpg'),
-            require('./landImgs/n6.jpg'),
-            require('./landImgs/n7.jpg'),
+            require('./landImgs/1.jpg'),
+            require('./landImgs/2.jpg'),
+            require('./landImgs/3.jpg'),
         ];
 
         const links = ["/mowing", "/landscaping", "/excavation"];
