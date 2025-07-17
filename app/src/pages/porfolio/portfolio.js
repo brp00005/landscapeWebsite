@@ -2,9 +2,10 @@
 //grid stuff: https://react-ui.io/components/Grid/
 
 import React from "react";
-import "./about.css";
-import Skyline from "./skyline.jpg"
+import "./styles.css";
 import { Grid } from '@react-ui-org/react-ui';
+import { NavLink as Link } from "react-router-dom";
+import Mowing from "./mowing";
 
 class CardHeader extends React.Component {
     render() {
@@ -13,7 +14,7 @@ class CardHeader extends React.Component {
             backgroundImage: `url(${image})`,
         };
         return (
-            <header style={style} className="card-header" />
+            <header style={style} className="pcard-header" />
         );
     }
 }
@@ -21,8 +22,8 @@ class CardHeader extends React.Component {
 /* class Button extends React.Component {
   render() {
     return (
-      <button className="button button-primary">
-        <i className="fa fa-chevron-right"></i> Find out more
+      <button className="pbutton button-primary">
+        <i className="fa fa-chevron-right"></i> See images
       </button>
     );
   }
@@ -32,10 +33,8 @@ class CardBody extends React.Component {
     render() {
         const { title, text } = this.props;
         return (
-            <div className="card-body">
-                <h2 className="center">{title}</h2>
-                <hr />
-                <p className="body-content">{text}</p>
+            <div className="pcard-body">
+                <h2 className="pcenter">{title}</h2>
                 {/* <Button/> */}
             </div>
         );
@@ -50,14 +49,15 @@ class Card extends React.Component {
         const { title, text, image } = this.props;
 
         return (
+            <Link to= {Mowing}>
+                <article className="pcard">
+                    <CardHeader image={image} />
+                    <CardBody
+                        title={title}
+                    />
+                </article>
+            </Link>
 
-            <article className="card">
-                <CardHeader image={image} />
-                <CardBody
-                    title={title}
-                    text={text}
-                />
-            </article>
         );
     }
 }
@@ -97,13 +97,13 @@ function cardGenerator(titles, texts, images) {
 
 /* grid, then card, then title/description etc etc. make fx to go ahead and load in names of employees and such */
 /* one owner, 6 employees */
-class About extends React.Component {
+class Portfolio extends React.Component {
 
 
 
     render() {
-        const names = ["n1", "n2", "n3", "n4", "n5", "n6", "n7"];
-        const descriptions = ["d1", "d2", "d3", "d4", "d5", "d6", "d7"];
+        const names = ["Mowing", "Landscaping", "Excavation"];
+        const descriptions = ["", "", ""];
         const imageArray = [
             require('./employees/n1.jpg'),
             require('./employees/n2.jpg'),
@@ -126,4 +126,4 @@ class About extends React.Component {
 }
 
 
-export default About;
+export default Portfolio;

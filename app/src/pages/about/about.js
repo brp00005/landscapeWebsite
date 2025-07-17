@@ -2,9 +2,8 @@
 //grid stuff: https://react-ui.io/components/Grid/
 
 import React from "react";
-import "./portfolio.css";
-import Skyline from "./skyline.jpg"
 import { Grid } from '@react-ui-org/react-ui';
+import "./about.css"
 
 class CardHeader extends React.Component {
     render() {
@@ -18,7 +17,7 @@ class CardHeader extends React.Component {
     }
 }
 
-class Button extends React.Component {
+/* class Button extends React.Component {
   render() {
     return (
       <button className="button button-primary">
@@ -26,7 +25,7 @@ class Button extends React.Component {
       </button>
     );
   }
-}
+} */
 
 class CardBody extends React.Component {
     render() {
@@ -34,7 +33,9 @@ class CardBody extends React.Component {
         return (
             <div className="card-body">
                 <h2 className="center">{title}</h2>
-                <Button/>
+                <hr />
+                <p className="body-content">{text}</p>
+                {/* <Button/> */}
             </div>
         );
     }
@@ -53,6 +54,7 @@ class Card extends React.Component {
                 <CardHeader image={image} />
                 <CardBody
                     title={title}
+                    text={text}
                 />
             </article>
         );
@@ -99,8 +101,8 @@ class About extends React.Component {
 
 
     render() {
-        const names = ["n1", "n2", "n3"];
-        const descriptions = ["d1", "d2", "d3"];
+        const names = ["n1", "n2", "n3", "n4", "n5", "n6", "n7"];
+        const descriptions = ["d1", "d2", "d3", "d4", "d5", "d6", "d7"];
         const imageArray = [
             require('./employees/n1.jpg'),
             require('./employees/n2.jpg'),

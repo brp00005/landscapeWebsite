@@ -1,0 +1,94 @@
+.pgrid {
+  display: grid;
+  grid-template-columns: repeat(3, 0vh);
+  column-gap: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.pcard {
+  width: 100vw;
+  margin: 0 auto;
+  background-color: transparent;
+  color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 10px 5px 40px 0px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.5s;
+  font-family: 'Times New Roman', Times, serif;
+  transform:translateX(0%);
+}
+
+.pcard:hover {
+  box-shadow: 10px 5px 40px 0px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.pcenter {
+  text-align: center;
+}
+
+.pcard-header {
+  height: 10vh;
+  background-size: cover;
+  background-position: center;
+  padding: 100px;
+  display: flex;
+  align-items: flex-end;
+  text-align: center;
+}
+
+/* .pcard-header--title {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+} */
+
+.pcard-body {
+  padding: 15px;
+  background-color: white;
+  color: black;
+  text-align: left;
+}
+
+/* .pdate {
+  font-size: 11px;
+  font-weight: 600;
+  color: grey;
+} */
+
+.pbody-content {
+  padding-bottom: 40px;
+  font-size: 17px;
+  line-height: 1.8;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.pbutton-primary {
+  border: none;
+  background-color: #555;
+  color: white;
+  font-size: 30px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform 0.25s;
+  max-width: 20%;
+}
+
+.pcard:hover .pbutton-primary {
+  transform: translateX(10px);
+}
+
+.pbutton-primary i {
+  padding-right: 4px;
+  width: 10px; 
+}
+
+.pdesigner-link {
+  color: #341cac;
+  text-align: center;
+  font-size: 12px;
+  text-decoration: none;
+  display: block;
+  margin-top: 1rem;
+}

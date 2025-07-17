@@ -9,13 +9,16 @@ import {
   Route,
 } from "react-router-dom";
 //import Home from "./pages";
-import About from "./pages/about";
+import About from "./pages/about/about";
 import Contact from "./pages/contact";
-import Portfolio from "./pages/portfolio";
+import Portfolio from "./pages/porfolio/portfolio";
 import Services from "./pages/services";
 import Home from "./pages/home";
 
 import ResponsiveAppBar from "./components/mNav/mNav";
+import Mowing from "./pages/porfolio/mowing";
+import Landscaping from "./pages/porfolio/landscaping";
+import Excavation from "./pages/porfolio/excavation";
 
 //Home
 //Contact
@@ -30,6 +33,9 @@ const routes = [
   ["/contact", Contact],
   ["/portfolio", Portfolio],
   ["/services", Services],
+  ["/mowing", Mowing],
+  ["/excavation", Excavation],
+  ["/landscaping", Landscaping],
 ];
 
 function genRoutes(array) {
