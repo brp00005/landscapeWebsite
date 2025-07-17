@@ -6,7 +6,7 @@ import { Link as RouterLink } from 'react-router-dom';
 const routes = [
   { text: 'About', href: '/about' },
   { text: 'Contact', href: '/contact' },
-  { text: 'Portfolio', href: '/portfolio' },
+  { text: 'Gallery', href: '/portfolio' },
   { text: 'Services', href: '/services' },
 ];
 
@@ -17,8 +17,9 @@ function ResponsiveAppBar() {
       style={{
         backgroundColor: 'green',
         color: 'black',
-        opacity: 0.8,
-        boxShadow: 'none'
+        opacity: 1,
+        boxShadow: 'none',
+        height: '6vh',
       }}
     >
       <Container maxWidth="xl">
@@ -27,8 +28,9 @@ function ResponsiveAppBar() {
           sx={{
             alignItems: 'center',
             justifyContent: 'space-between',
-            minHeight: 64,
-            px: 2,
+            /* px: 2, */
+            height: '100%',
+            verticalAlign: 'center'
           }}
         >
           {/* logo icon and text */}
@@ -41,7 +43,7 @@ function ResponsiveAppBar() {
                 display: { xs: 'none', md: 'flex' },
                 fontFamily: "'Times New Roman', serif",
                 fontWeight: 700,
-                fontSize: 30,
+                fontSize: '30px',
                 letterSpacing: '.1rem',
                 color: 'black',
                 textDecoration: 'none',
@@ -56,8 +58,9 @@ function ResponsiveAppBar() {
             sx={{
               display: 'flex',
               alignItems: 'center',
-              gap: '80px',
+              gap: '70px',
               ml: 'auto',
+              justifyContent: 'center'
             }}
           >
             {routes.map((route) => (
@@ -68,12 +71,12 @@ function ResponsiveAppBar() {
                 sx={{
                   fontFamily: "'Times New Roman', serif",
                   fontSize: 30,
-                  fontWeight: 700,
+                  fontWeight: 300,
                   color: 'black',
                   textTransform: 'none',
                   p: '8px 16px',
                   '&:hover': {
-                    backgroundColor: 'rgba(128, 128, 128, 0.1)',
+                    backgroundColor: 'rgba(150, 150, 150, .5)',
                   },
                 }}
               >

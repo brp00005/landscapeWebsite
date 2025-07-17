@@ -54,8 +54,8 @@ class Card extends React.Component {
             <article className="card">
                 <CardHeader image={image} />
                 <CardBody
-                    title="Name"
-                    text="Description"
+                    title={title}
+                    text={text}
                 />
             </article>
         );
