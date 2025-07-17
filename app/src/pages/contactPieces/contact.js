@@ -2,10 +2,10 @@
 
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import './contactPieces/contact.css';
-import DetailsBar from './contactPieces/detailsBar';
+import './contact.css';
+import DetailsBar from './detailsBar';
 
-function FormPage() {
+function Contact() {
     const form = useRef();
 
     const sendEmail = (e) => {
@@ -44,4 +44,4 @@ function FormPage() {
     );
 }
 
-export default FormPage;
+export default Contact;

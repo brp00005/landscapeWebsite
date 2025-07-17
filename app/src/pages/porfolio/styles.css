@@ -1,9 +1,8 @@
 .pgrid {
   display: grid;
-  grid-template-columns: repeat(3, 0vh);
-  column-gap: 16px;
-  align-items: center;
-  justify-content: center;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 16px;
+  padding: 1rem;
 }
 
 .pcard {
@@ -16,7 +15,7 @@
   box-shadow: 10px 5px 40px 0px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.5s;
   font-family: 'Times New Roman', Times, serif;
-  transform:translateX(0%);
+  /* transform:translateX(-50%); */
 }
 
 .pcard:hover {

@@ -10,15 +10,15 @@ import {
 } from "react-router-dom";
 //import Home from "./pages";
 import About from "./pages/about/about";
-import Contact from "./pages/contact";
+import Contact from "./pages/contactPieces/contact";
 import Portfolio from "./pages/porfolio/portfolio";
 import Services from "./pages/services";
 import Home from "./pages/home";
-
-import ResponsiveAppBar from "./components/mNav/mNav";
-import Mowing from "./pages/porfolio/mowing";
 import Landscaping from "./pages/porfolio/landscaping";
 import Excavation from "./pages/porfolio/excavation";
+import Mowing from "./pages/porfolio/mowing";
+
+import ResponsiveAppBar from "./components/mNav/mNav";
 
 //Home
 //Contact
@@ -34,8 +34,8 @@ const routes = [
   ["/portfolio", Portfolio],
   ["/services", Services],
   ["/mowing", Mowing],
-  ["/excavation", Excavation],
   ["/landscaping", Landscaping],
+  ["excavation", Excavation],
 ];
 
 function genRoutes(array) {

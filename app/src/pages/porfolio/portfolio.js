@@ -6,6 +6,8 @@ import "./styles.css";
 import { Grid } from '@react-ui-org/react-ui';
 import { NavLink as Link } from "react-router-dom";
 import Mowing from "./mowing";
+import Landscaping from "./landscaping";
+import Excavation from "./excavation";
 
 class CardHeader extends React.Component {
     render() {
@@ -46,10 +48,10 @@ class CardBody extends React.Component {
 class Card extends React.Component {
     render() {
         /* magic */
-        const { title, text, image } = this.props;
+        const { title, text, image, path } = this.props;
 
         return (
-            <Link to= {Mowing}>
+            <Link to={path}>
                 <article className="pcard">
                     <CardHeader image={image} />
                     <CardBody
@@ -86,40 +88,34 @@ class Card extends React.Component {
     return arr;
 } */
 
-function cardGenerator(titles, texts, images) {
+function cardGenerator(titles, texts, images, paths) {
     return titles.map((title, i) => (
-        <Card key={i} title={title} text={texts[i]} image={images[i]} />
+        <Card key={i} title={title} text={texts[i]} image={images[i]} path={paths[i]} />
     ));
 }
-
-
-
 
 /* grid, then card, then title/description etc etc. make fx to go ahead and load in names of employees and such */
 /* one owner, 6 employees */
 class Portfolio extends React.Component {
 
-
-
     render() {
         const names = ["Mowing", "Landscaping", "Excavation"];
         const descriptions = ["", "", ""];
         const imageArray = [
-            require('./employees/n1.jpg'),
-            require('./employees/n2.jpg'),
-            require('./employees/n3.jpg'),
-            require('./employees/n4.jpg'),
-            require('./employees/n5.jpg'),
-            require('./employees/n6.jpg'),
-            require('./employees/n7.jpg'),
+            require('./landImgs/n1.jpg'),
+            require('./landImgs/n2.jpg'),
+            require('./landImgs/n3.jpg'),
+            require('./landImgs/n4.jpg'),
+            require('./landImgs/n5.jpg'),
+            require('./landImgs/n6.jpg'),
+            require('./landImgs/n7.jpg'),
         ];
 
+        const links = ["/mowing", "/landscaping", "/excavation"];
 
         return (
-            <div className="grid">
-
-                {cardGenerator(names, descriptions, imageArray)}
-
+            <div className="pgrid">
+                {cardGenerator(names, descriptions, imageArray, links)}
             </div>
         );
     }
