@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './landscaping.css';
+import GridGen from './gridGen';
 
 import img1 from './landImgs/1.jpg';
 import img2 from './landImgs/2.jpg';
@@ -14,9 +15,6 @@ import img10 from './landImgs/10.jpg';
 import img11 from './landImgs/11.jpg';
 
 const Landscaping = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const [modalImg, setModalImg] = useState('');
-    const [caption, setCaption] = useState('');
 
     const columns = [
         [
@@ -59,50 +57,9 @@ const Landscaping = () => {
         ],
     ];
 
-    const openModal = (src, alt) => {
-        setModalImg(src);
-        setCaption(alt);
-        setIsOpen(true);
-    };
-
-    const closeModal = () => {
-        setIsOpen(false);
-        setModalImg('');
-        setCaption('');
-    };
 
     return (
-        <div>
-            <div className="header">
-                <h1>Landscaping Gallery</h1>
-            </div>
-            <div className="row" style={{ display: "flex", gap: "10px" }}>
-                {columns.map((imgs, i) => (
-                    <div
-                        key={i}
-                        className="column"
-                        style={{ flex: 1, display: "flex", flexDirection: "column", gap: "10px" }}
-                    >
-                        {imgs.map((src, j) => (
-                            <img
-                                key={j}
-                                src={src}
-                                style={{ width: "100%", display: "block", cursor: "pointer" }}
-                                onClick={() => openModal(src, `Image ${i}-${j}`)}
-                            />
-                        ))}
-                    </div>
-                ))}
-            </div>
-
-            {isOpen && (
-                <div className="modal-overlay" onClick={closeModal}>
-                    <span className="close" onClick={closeModal}>&times;</span>
-                    <img className="modal-content" src={modalImg} alt={caption} onClick={(e) => e.stopPropagation()} />
-                </div>
-            )}
-
-        </div>
+        <GridGen columns={columns} />
     );
 };
 

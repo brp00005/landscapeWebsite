@@ -35,7 +35,7 @@ const routes = [
   ["/services", Services],
   ["/mowing", Mowing],
   ["/landscaping", Landscaping],
-  ["excavation", Excavation],
+  ["/excavation", Excavation],
 ];
 
 function genRoutes(array) {
@@ -46,11 +46,13 @@ function genRoutes(array) {
 
 function App() {
   return (
-
-    <Router>
-      <ResponsiveAppBar />
-      <Routes>{genRoutes(routes)}</Routes>
-    </Router>
+    <div>
+      <Router>
+        <ResponsiveAppBar />
+        <Routes>{genRoutes(routes)}</Routes>
+      </Router>
+      {/* <Home/> */}
+    </div>
 
 
 
