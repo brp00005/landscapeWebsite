@@ -45,7 +45,7 @@ function ResponsiveAppBar() {
       position="static"
       sx={{
         backgroundColor: '#13271aff',
-        color: 'black',
+        color: 'red',
         boxShadow: 'none',
         height: '6vh'
       }}
@@ -67,7 +67,7 @@ function ResponsiveAppBar() {
               sx={{
                 fontFamily: "'Times New Roman', serif",
                 fontWeight: 700,
-                fontSize: '30px',
+                fontSize: { xs: '20px', sm: '20px', md: '30px' },
                 letterSpacing: '.1rem',
                 color: '#cececeff',
                 textDecoration: 'none'
@@ -78,7 +78,7 @@ function ResponsiveAppBar() {
           </Box>
 
           {/* desktop links */}
-          <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: '40px' }}>
+          <Box sx={{ display: { xs: 'none', sm: 'none', md: 'none', lg: 'flex' }, gap: '40px' }}>
             {routes.map((route) => (
               <Button
                 key={route.text}
@@ -101,12 +101,11 @@ function ResponsiveAppBar() {
           </Box>
 
           {/* mobile menu button */}
-          <Box sx={{ display: { sm: 'flex', md: 'none' } }}>
+          <Box sx={{ display: { sm: 'flex', lg: 'none' } }}>
             <IconButton
               size="large"
               onClick={handleOpenMenu}
-              color="inherit"
-              sx={{ p: 0 }}
+              sx={{ p: 0, color: "white" }}
             >
               <MenuIcon />
             </IconButton>
@@ -122,6 +121,11 @@ function ResponsiveAppBar() {
                 vertical: 'top',
                 horizontal: 'right'
               }}
+              PaperProps={{
+                sx: {
+                  backgroundColor: '#273f2fff'
+                }
+              }}
             >
               {routes.map((route) => (
                 <MenuItem key={route.text} onClick={handleCloseMenu}>
@@ -130,8 +134,11 @@ function ResponsiveAppBar() {
                     to={route.href}
                     sx={{
                       textTransform: 'none',
-                      color: '#cececeff',
-                      fontFamily: "'Times New Roman', serif"
+                      fontFamily: "'Times New Roman', serif",
+                      fontSize: { xs: '20px', sm: '25px', md: '20px' },
+                      backgroundColor: "inherit",
+                      color: "white",
+                      height: "10px"
                     }}
                   >
                     {route.text}

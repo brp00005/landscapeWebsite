@@ -10,13 +10,11 @@ import './detailsBar.css'
 const DetailsBar = () => {
     return (
         <div className="DetailsBarWrapper">
-            <div className="TextWrapper">
-                <p className="TextOne">Contact Us</p>
-                <p className="TextTwo">
-                    Fill up the form and we'll follow up within 24 hours. Estimates are free. Feel free to directly email or call us.
-                </p>
 
-            </div>
+            <p className='TextOne'>Contact Us</p>
+            <h4 className='TextOne'>
+                Fill up the form and we'll follow up within 24 hours. Estimates are free. Feel free to directly email or call us.
+            </h4>
 
             <div>
                 {/* TODO: rip and move all to bottom bar */}
@@ -36,6 +34,11 @@ const DetailsBar = () => {
                     <Icon.Mail size={31} color="rgb(8, 138, 54)" />
                     <div className="ContactText"> allprolandscaping1@hotmail.com</div>
                 </a>
+
+                <div className="ContactsWrapper">
+                    <Icon.MapPin size={31} color="rgb(8, 138, 54)" />
+                    <span className="ContactText">Fill in address</span>
+                </div>
             </div>
 
         </div>

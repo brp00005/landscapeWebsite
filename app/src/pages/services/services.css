@@ -19,6 +19,25 @@
   font-family: 'Times New Roman', Times, serif; 
 }
 
+@media (max-width: 2000px) {
+  .scard{
+    width: 90vw;
+  }
+  .sgrid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .scard{
+    width: 45vw;
+  }
+  .sgrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
 .scard:hover {
   box-shadow: 10px 5px 40px 0px rgba(0, 0, 0, 0.4);
   cursor: pointer;
