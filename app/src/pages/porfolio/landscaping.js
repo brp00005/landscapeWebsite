@@ -1,6 +1,18 @@
 import React, { useState } from 'react';
 import './landscaping.css';
 
+import img1 from './landImgs/1.jpg';
+import img2 from './landImgs/2.jpg';
+import img3 from './landImgs/3.jpg';
+import img4 from './landImgs/4.jpg';
+import img5 from './landImgs/5.jpg';
+import img6 from './landImgs/6.jpg';
+import img7 from './landImgs/7.jpg';
+import img8 from './landImgs/8.jpg';
+import img9 from './landImgs/9.jpg';
+import img10 from './landImgs/10.jpg';
+import img11 from './landImgs/11.jpg';
+
 const Landscaping = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [modalImg, setModalImg] = useState('');
@@ -8,13 +20,17 @@ const Landscaping = () => {
 
     const columns = [
         [
-            "https://www.rxwallpaper.site/wp-content/uploads/free-beach-sunset-wallpapers-desktop-long-wallpapers-4-800x800.jpg",
-            "https://i.pinimg.com/originals/00/0f/85/000f8537c14a1d9e350ebdd30951fc27.jpg",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIaBCwXKGCW9Ub7Lr-RmAoF2wJpr5NBk5Wb2npRiFaz4wIEQMsUA",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9NQ1BncFIDNjxnTFOWdaPyLdGG5-a77zKUEGzhvO0m327KB3Fhg",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ58-24YV35w71NtvCRg1IVJobasdldAPhkhcgHxgTjq50F9goprw",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgJ1UiOaq_MNStMdHpBEaHTs2YAKxTbQ0CIdDMj9Hsuegus6_p",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9IUI0AsuowTP08NlMxbGkvPtQnjP81G9JIBxK2pvI0Eq5oMGC",
+            img1,
+            img2,
+            img3,
+            img4,
+            img5,
+            img6,
+            img7,
+            img8,
+            img9,
+            img10,
+            img11,
         ],
         [
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNNyqmPsZSWT7gSlMT2S3MAIKeIv6BNi8RVfUyJrt9Hz-j7cBA5w",
@@ -80,12 +96,12 @@ const Landscaping = () => {
             </div>
 
             {isOpen && (
-                <div>
-                    <span className="close" onClick={closeModal}></span>
-                    <img className="modal-content" src={modalImg}/>
+                <div className="modal-overlay" onClick={closeModal}>
+                    <span className="close" onClick={closeModal}>&times;</span>
+                    <img className="modal-content" src={modalImg} alt={caption} onClick={(e) => e.stopPropagation()} />
                 </div>
-
             )}
+
         </div>
     );
 };
