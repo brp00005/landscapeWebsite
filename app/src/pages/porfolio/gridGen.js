@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import './landscaping.css';
 
-function GridGen({columns}) {
+function GridGen({columns, title}) {
 
     const [isOpen, setIsOpen] = useState(false);
     const [modalImg, setModalImg] = useState('');
@@ -25,7 +25,7 @@ function GridGen({columns}) {
     return (
         <div>
             <div className="title">
-                <h1>Excavation Work</h1>
+                <h1>{title}</h1>
             </div>
             <div className="row" style={{ display: "flex", gap: "10px" }}>
                 {columns.map((imgs, i) => (

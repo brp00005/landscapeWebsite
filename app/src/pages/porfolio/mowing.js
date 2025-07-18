@@ -58,7 +58,7 @@ const Mowing = () => {
     ];
 
     return (
-        <GridGen columns = {columns}/>
+        <GridGen columns={columns} title = {"Mowing Work"}/>
     );
 };
 

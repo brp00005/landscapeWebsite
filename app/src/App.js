@@ -12,7 +12,7 @@ import {
 import About from "./pages/about/about";
 import Contact from "./pages/contactPieces/contact";
 import Portfolio from "./pages/porfolio/portfolio";
-import Services from "./pages/services";
+import Services from "./pages/services/services";
 import Home from "./pages/home";
 import Landscaping from "./pages/porfolio/landscaping";
 import Excavation from "./pages/porfolio/excavation";

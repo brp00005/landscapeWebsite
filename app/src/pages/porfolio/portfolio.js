@@ -2,7 +2,7 @@
 //grid stuff: https://react-ui.io/components/Grid/
 
 import React from "react";
-import "./styles.css";
+import "./portfolio.css";
 import { Grid } from '@react-ui-org/react-ui';
 import { NavLink as Link } from "react-router-dom";
 import Mowing from "./mowing";

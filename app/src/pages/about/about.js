@@ -98,8 +98,6 @@ function cardGenerator(titles, texts, images) {
 /* one owner, 6 employees */
 class About extends React.Component {
 
-
-
     render() {
         const names = ["n1", "n2", "n3", "n4", "n5", "n6", "n7"];
         const descriptions = ["d1", "d2", "d3", "d4", "d5", "d6", "d7"];

@@ -1,56 +1,35 @@
-.grid {
+.sgrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 16px;
+  grid-template-columns: repeat(2, 3fr);
   align-items: center;
   justify-content: center;
   align-self: center; 
+  column-gap: 1vw;
 }
 
-@media (max-width: 600px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (min-width: 601px) and (max-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1025px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-
-.card {
-  width: 20vw;
+/* putting any background stuff here doesn't work, control top gap here though */
+.scard {
+  width: 40vw;
   margin: 0 auto;
-  background-color: rgb(224, 224, 224);
-  color: "#cececeff";
-  border-radius: 8px;
-  margin-top: 15px;
+  margin-top: 20px;
+  border-radius: 7px;
   overflow: hidden;
   box-shadow: 10px 5px 40px 0px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.5s;
-  font-family: 'Times New Roman', Times, serif;
-  border: 2.5px solid #555;
+  font-family: 'Times New Roman', Times, serif; 
 }
 
-.card:hover {
+.scard:hover {
   box-shadow: 10px 5px 40px 0px rgba(0, 0, 0, 0.4);
   cursor: pointer;
 }
 
-.center {
+.scenter {
   text-align: center;
 }
 
-.card-header {
-  height: 25vh;
+.scard-header {
+  height: 10vh;
   background-size: cover;
   background-position: center;
   padding: 100px;
@@ -66,11 +45,13 @@
     
   } */
 
-.card-body {
+.scard-body {
+  padding-top: 10vh;
   padding: 15px;
-  background-color: "#cececeff";
-  color: rgb(39, 54, 37);
+  background-color: rgb(156, 194, 156);
+  color: black;
   text-align: left;
+  border: 2.5px solid #555;
 }
 
 /*  .date {
@@ -79,14 +60,14 @@
     color: grey;
   } */
 
-.body-content {
+.sbody-content {
   padding-bottom: 40px;
   font-size: 17px;
   line-height: 1.8;
   font-family: 'Times New Roman', Times, serif;
 }
 
-.button-primary {
+.sbutton-primary {
   border: none;
   background-color: #555;
   color: "#cececeff";
@@ -96,15 +77,15 @@
   transition: transform 0.25s;
 }
 
-.card:hover .button-primary {
+.scard:hover .button-primary {
   transform: translateX(10px);
 }
 
-.button-primary i {
+.sbutton-primary i {
   padding-right: 4px;
 }
 
-.designer-link {
+.sdesigner-link {
   color: #341cac;
   text-align: center;
   font-size: 12px;

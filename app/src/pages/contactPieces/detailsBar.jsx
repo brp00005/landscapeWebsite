@@ -13,7 +13,7 @@ const DetailsBar = () => {
             <div className="TextWrapper">
                 <p className="TextOne">Contact Us</p>
                 <p className="TextTwo">
-                    Fill up the form and we'll follow up within ____ hours. Estimates are free. Feel free to directly email or call us.
+                    Fill up the form and we'll follow up within 24 hours. Estimates are free. Feel free to directly email or call us.
                 </p>
 
             </div>
@@ -22,18 +22,18 @@ const DetailsBar = () => {
                 {/* TODO: rip and move all to bottom bar */}
                 {/* Office */}
                 <a href="Office: 304-581-3885" className="ContactsWrapper">
-                    <Icon.Phone size={30} color="rgb(252, 113, 137)" />
+                    <Icon.Phone size={30} color="#088a36ff" />
                     <div className="ContactText"> 304-581-3885</div>
                 </a>
 
                 {/* Cell */}
                 <a href="Cell: 856-373-3455" className="ContactsWrapper">
-                    <Icon.Phone size={30} color="rgb(252, 113, 137)" />
+                    <Icon.Phone size={30} color="rgba(8, 138, 54)" />
                     <div className="ContactText"> 856-373-3455</div>
                 </a>
 
                 <a href="mailto:allprolandscaping1@hotmail.com" className="ContactsWrapper">
-                    <Icon.Mail size={30} color="rgb(252, 113, 137)" />
+                    <Icon.Mail size={31} color="rgb(8, 138, 54)" />
                     <div className="ContactText"> allprolandscaping1@hotmail.com</div>
                 </a>
             </div>
