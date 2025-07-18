@@ -5,11 +5,12 @@
   align-items: center;
   justify-content: center;
   align-self: center; 
+  padding: 1rem; /* Base padding for the grid */
 }
 
 .card {
   width: 25vw;
-  margin: 0 auto;
+  margin: 0 auto; /* Centers the card horizontally within its grid track */
   background-color: rgb(224, 224, 224);
   color: "#cececeff";
   border-radius: 8px;
@@ -23,12 +24,13 @@
 
 @media (max-width: 800px) {
   .card{
-    width: 400px;
-    margin-left: 5px;
-    margin-right: 5px;
+    width: calc(100% - 10px); 
+    margin: 5px ; 
   }
   .grid {
     grid-template-columns: 1fr;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 }
 
