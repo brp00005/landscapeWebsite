@@ -62,3 +62,5 @@ broken fs: "browser": {
   }
 
   add this to root of package.json folder 
+
+deployment: https://www.youtube.com/watch?v=4G6O0BIoq6M
