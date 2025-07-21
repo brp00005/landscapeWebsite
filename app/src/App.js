@@ -28,6 +28,7 @@ import ResponsiveAppBar from "./components/mNav/mNav";
 
 //if want to add stuff to navbar, start here
 const routes = [
+  ["/", Home],
   ["/home", Home],
   ["/about", About],
   ["/contact", Contact],
@@ -49,8 +50,10 @@ function App() {
     <div>
       <Router>
         <ResponsiveAppBar />
+          
         <Routes>{genRoutes(routes)}</Routes>
       </Router>
+      
       {/* <Home/> */}
     </div>
 
