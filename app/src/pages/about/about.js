@@ -99,8 +99,27 @@ function cardGenerator(titles, texts, images) {
 class About extends React.Component {
 
     render() {
-        const names = ["n1", "n2", "n3", "n4", "n5", "n6", "n7"];
-        const descriptions = ["d1", "d2", "d3", "d4", "d5", "d6", "d7"];
+        const names = [
+            "Larry Reaville",
+            "Luke Reaville",
+            "n3",
+            "n4",
+            "n5",
+            "n6",
+            "n7"
+        ];
+
+        const descriptions = [
+            "25+ years of landscaping, hardscaping, & excavation experience. Phone: 856-373-3885",
+            "7+ years of landscaping, snow removal, etc. Phone: 304-777-9672",
+            "d3",
+            "d4",
+            "d5",
+            "d6",
+            "d7"
+        ];
+
+
         const imageArray = [
             require('./employees/n1.jpg'),
             require('./employees/n2.jpg'),

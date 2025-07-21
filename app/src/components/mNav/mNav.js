@@ -1,10 +1,10 @@
 /* MUI uses a system of breakpoints based on screen width:
-Breakpoint	Screen Type	Range
-xs	Extra small	0px and up
-sm	Small	600px and up
-md	Medium (desktop)	900px and up
-lg	Large	1200px and up
-xl	Extra large	1536px and up */
+Breakpoint  Screen Type Range
+xs  Extra small 0px and up
+sm  Small 600px and up
+md  Medium (desktop)  900px and up
+lg  Large 1200px and up
+xl  Extra large 1536px and up */
 
 import React, { useState } from 'react';
 import {
@@ -67,7 +67,7 @@ function ResponsiveAppBar() {
               sx={{
                 fontFamily: "'Times New Roman', serif",
                 fontWeight: 700,
-                fontSize: { xs: '20px', sm: '20px', md: '30px' },
+                fontSize: { xs: '25px', sm: '25px', md: '30px' },
                 letterSpacing: '.1rem',
                 color: '#cececeff',
                 textDecoration: 'none'
@@ -86,7 +86,7 @@ function ResponsiveAppBar() {
                 to={route.href}
                 sx={{
                   fontFamily: "'Times New Roman', serif",
-                  fontSize: 30,
+                  fontSize: { xs: '0.8rem', sm: '0.9rem', md: '1rem', lg: '1.1rem' }, // Smaller font sizes
                   fontWeight: 700,
                   color: '#cececeff',
                   textTransform: 'none',
@@ -135,7 +135,8 @@ function ResponsiveAppBar() {
                     sx={{
                       textTransform: 'none',
                       fontFamily: "'Times New Roman', serif",
-                      fontSize: { xs: '20px', sm: '25px', md: '20px' },
+                      // Adjust font size for different screen sizes in the mobile menu
+                      fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' }, // Smaller font sizes for mobile
                       backgroundColor: "inherit",
                       color: "white",
                       height: "10px"
@@ -154,4 +155,3 @@ function ResponsiveAppBar() {
 }
 
 export default ResponsiveAppBar;
-

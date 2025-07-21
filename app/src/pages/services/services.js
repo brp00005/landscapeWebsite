@@ -72,12 +72,12 @@ const Names = [
 ];
 
 const Descriptions = [
-    "1",
-    "2",
+    "We can trim edges, fill bald spots in your lawn, repair irrigation systems, and more.",
+    "We can hydroseed both commercial and residential lawns for erosion control, or landscaping.",
     "3",
-    "4",
+    "We can remove the stump from your property and fill in the resulting hole on your property.",
     "5",
-    "6",
+    "We can remove debris that has built up during the season, and trim any plants that require it.",
     "7",
     "Installation available*"
 ];

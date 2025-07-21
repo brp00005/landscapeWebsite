@@ -14,6 +14,7 @@
     font-size: 2vh;
     border: none;
     background-color: "#cececeff";
+    margin-top: 30px; 
 }
 
 @media (max-width: 600px) {

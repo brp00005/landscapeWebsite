@@ -12,7 +12,7 @@
   color: "#cececeff";
   border-radius: 8px;
   overflow: hidden;
-  border: 2.5px solid #555;
+  border: 0px solid #555;
   box-shadow: 10px 5px 40px 0px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.5s;
   font-family: 'Times New Roman', Times, serif;

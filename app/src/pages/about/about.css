@@ -19,7 +19,7 @@
   box-shadow: 10px 5px 40px 0px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.5s;
   font-family: 'Times New Roman', Times, serif;
-  border: 2.5px solid #555;
+  border: 0px solid #555;
 }
 
 @media (max-width: 800px) {
