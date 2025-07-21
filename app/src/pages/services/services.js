@@ -83,7 +83,7 @@ const Descriptions = [
 ];
 
 const generalInfo = (
-    <p style = {{alignItems:'center', textAlign:'center', fontFamily: "Times", fontSize: '30px', marginLeft: "10px", marginRight: "10px"}}>
+    <p style = {{alignItems:'center', textAlign:'center', fontFamily: "Times", fontSize: '20px', marginLeft: "10px", marginRight: "10px", marginBottom: '17px', marginTop: '20px'}}>
         Here is the list of services we offer. If you have any questions or comments, feel free to reach out to us through our{" "}
         <a href="/contact">contact page</a>,{" "} phone number or email. 
     </p>
