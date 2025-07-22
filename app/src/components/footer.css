@@ -1,7 +1,7 @@
 .footer-bar {
   background-color: black;
   color: white;
-  padding: 20px;
+  padding: 17px;
   text-align: center;
   width: 100%;
   box-sizing: border-box;
@@ -9,6 +9,7 @@
   bottom: 0;
   left: 0;
   z-index: 1000;
+  height: 17px; 
 }
 
 .footer-bar p {

@@ -19,10 +19,8 @@ code {
 }
 
 .App {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
   text-align: center;
+  min-height: 100vh;
   overflow-x: hidden;
 }
 
@@ -52,24 +50,13 @@ code {
 }
 
 .app-content {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+  padding-bottom: 120px;
   width: 100%;
   box-sizing: border-box;
 }
 
-.footer-bar.fixed-on-homepage {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 1000;
-}
-
-.app-content.homepage-fixed-footer-padding {
-  padding-bottom: 60px;
+.cards-section {
+  margin-bottom: 40px;
 }
 
 @keyframes App-logo-spin {

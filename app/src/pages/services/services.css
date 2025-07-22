@@ -5,9 +5,9 @@
   justify-content: center;
   align-self: center; 
   column-gap: 1vw;
+  margin-bottom: 10px;
 }
 
-/* putting any background stuff here doesn't work, control top gap here though */
 .scard {
   width: 40vw;
   margin: 0 auto;
@@ -27,16 +27,16 @@
   }
   .sgrid {
     grid-template-columns: repeat(1, 1fr);
-    margin-top: 2px; 
-    margin-bottom: 2px;
+    margin-top: 1px; 
+    margin-bottom: 1px;
   }
 }
 
 @media (min-width: 1000px) {
   .scard{
     width: 45vw;
-    margin-top: 3px; 
-    margin-bottom: 3px;
+    margin-top: 1px; 
+    margin-bottom: 1px;
   }
   .sgrid {
     grid-template-columns: repeat(2, 1fr);
@@ -44,7 +44,6 @@
     margin-bottom: 2px;
   }
 }
-
 
 .scard:hover {
   box-shadow: 10px 5px 40px 0px rgba(0, 0, 0, 0.4);
@@ -65,13 +64,6 @@
   text-align: center;
 }
 
-/* .card-header--title {
-    margin: 0;
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    
-  } */
-
 .scard-body {
   padding-top: 9vh;
   padding: 15px;
@@ -80,12 +72,6 @@
   text-align: left;
   border: 0px solid #555;
 }
-
-/*  .date {
-    font-size: 11px;
-    font-weight: 600;
-    color: grey;
-  } */
 
 .sbody-content {
   padding-bottom: 40px;
