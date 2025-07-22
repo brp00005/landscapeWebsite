@@ -1,5 +1,3 @@
-//https://hackernoon.com/integrating-a-contact-form-with-emailjs-in-react
-
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import './contact.css';
@@ -22,21 +20,21 @@ function Contact() {
                 () => alert('Message sent!'),
                 (error) => {
                     alert('Failed to send message');
+                    alert(process.env.REACT_APP_PUBLIC_KEY);
                 }
             );
     };
 
     return (
-
         <div>
             <DetailsBar />
             <form className="form-container" ref={form} onSubmit={sendEmail}>
                 <div className='input'>
-                    <input type="text" name="user_name" placeholder="Name" required />
-                    <input type="email" name="user_email" placeholder="Email & phone number" required />
+                    <input type="text" name="name" placeholder="Name" required />
+                    <input type="email" name="email" placeholder="Email" required />
                 </div>
                 <div>
-                    <textarea name="message" placeholder="Message" required />
+                    <textarea name="message" placeholder="Message and phone number" required />
                 </div>
                 <input type="submit" value="Submit" id="input-submit" />
             </form>
