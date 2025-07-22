@@ -19,7 +19,7 @@ import Excavation from "./pages/porfolio/excavation";
 import Mowing from "./pages/porfolio/mowing";
 
 import ResponsiveAppBar from "./components/mNav/mNav";
-
+import Footer from "./components/footer";
 //Home
 //Contact
 //Services and Pricing
@@ -52,7 +52,9 @@ function App() {
         <ResponsiveAppBar />
           
         <Routes>{genRoutes(routes)}</Routes>
+        
       </Router>
+      <Footer/>
       
       {/* <Home/> */}
     </div>
