@@ -1,0 +1,22 @@
+.footer-bar {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.footer-bar p {
+  margin: 0;
+  font-size: 0.9em;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+@media (max-width: 600px){
+    
+}
