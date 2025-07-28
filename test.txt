@@ -62,3 +62,7 @@ broken fs: "browser": {
   }
 
   add this to root of package.json folder 
+
+
+For hiding API key: console or see github. 
+Cpanel hosting plan allows access to console, 
