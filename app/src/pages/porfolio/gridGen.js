@@ -7,6 +7,8 @@ function GridGen({ columns, title }) {
     const [caption, setCaption] = useState('');
     const [isPhoneScreen, setIsPhoneScreen] = useState(window.innerWidth < 992);
 
+    const defaultAltText = "Landscaping in Morgantown, WV";
+
     useEffect(() => {
         const handleResize = () => {
             setIsPhoneScreen(window.innerWidth < 992);
@@ -15,9 +17,9 @@ function GridGen({ columns, title }) {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    const openModal = (src, alt) => {
+    const openModal = (src) => {
         setModalImg(src);
-        setCaption(alt);
+        setCaption(defaultAltText);
         setIsOpen(true);
     };
 
@@ -41,8 +43,9 @@ function GridGen({ columns, title }) {
                             <img
                                 key={j}
                                 src={src}
+                                alt={defaultAltText}
                                 style={{ width: "100%", display: "block", cursor: "pointer" }}
-                                onClick={() => openModal(src, `Image ${j + 1}`)}
+                                onClick={() => openModal(src)}
                             />
                         ))}
                     </div>
@@ -58,8 +61,9 @@ function GridGen({ columns, title }) {
                                 <img
                                     key={j}
                                     src={src}
+                                    alt={defaultAltText}
                                     style={{ width: "100%", display: "block", cursor: "pointer" }}
-                                    onClick={() => openModal(src, `Image ${i + 1}-${j + 1}`)}
+                                    onClick={() => openModal(src)}
                                 />
                             ))}
                         </div>

@@ -45,22 +45,19 @@ function genRoutes(array) {
   ));
 }
 
+
 function App() {
   return (
     <div>
+      
       <Router>
         <ResponsiveAppBar />
-          
+
         <Routes>{genRoutes(routes)}</Routes>
-        
+
       </Router>
-      <Footer/>
-      
-      {/* <Home/> */}
+      <Footer />
     </div>
-
-
-
   );
 }
 

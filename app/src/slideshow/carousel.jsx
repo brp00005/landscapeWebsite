@@ -43,7 +43,7 @@ const ImageCarousel = () => {
                 {images.map((image, index) => (
                     <img
                         src={image.url}
-                        alt="images"
+                        alt="Morgantown WV Landscaping Image"
                         className={currentImageIndex === index ? 'block' : 'hidden'}
                         key={image.id}
                     />

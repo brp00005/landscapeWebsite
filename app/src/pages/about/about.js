@@ -110,7 +110,7 @@ class About extends React.Component {
         ];
 
         const descriptions = [
-            "25+ years of landscaping, hardscaping, & excavation experience. Phone: 856-373-3885",
+            "25+ years of landscaping, hardscaping, & excavation experience in both West Virginia and New Jersey. Phone: 856-373-3885",
             "7+ years of landscaping, snow removal, etc. Phone: 304-777-9672",
             "d3",
             "d4",
@@ -132,10 +132,13 @@ class About extends React.Component {
 
 
         return (
-            <div className="grid">
-
-                {cardGenerator(names, descriptions, imageArray)}
-
+            <div>
+                <div>
+                    <h3 style={{ textAlign: "center", paddingTop: "20px", fontSize: "2.2vh", paddingLeft: "1vw", paddingRight: "1vw" }}>All Pro Landscaping is a West Virginia company that has team members with numerous years of experience with professional landscaping work. <br />Check out the seven members of our team below!</h3>
+                </div>
+                <div className="grid">
+                    {cardGenerator(names, descriptions, imageArray)}
+                </div>
             </div>
         );
     }

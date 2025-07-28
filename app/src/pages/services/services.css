@@ -53,8 +53,8 @@
 .scenter {
   display: flex;
   align-items: center; 
-  justify-content: center; 
-  height: 2vh; 
+  justify-content: center;
+  height: 2vh;
   padding-top: 1vh;
   padding-bottom: 1vh;
   text-align: center;
