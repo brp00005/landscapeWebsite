@@ -13,25 +13,26 @@ const DetailsBar = () => {
             </div>}
 
             <div className="ContactLinksContainer">
+                
                 <a href="tel:+1-304-581-3885" className="ContactsWrapper">
-                    <Icon.Phone size={24} color="#088a36" />
+                    <Icon.Phone size={25} color="#088a36" />
                     <div className="ContactText"> Office: 304-581-3885</div>
                 </a>
 
                 <a href="tel:+1-856-373-3455" className="ContactsWrapper">
-                    <Icon.Phone size={24} color="#088a36" />
+                    <Icon.Phone size={25} color="#088a36" />
                     <div className="ContactText"> Cell: 856-373-3455</div>
                 </a>
 
                 <a href="tel:+1-304-777-9672" className="ContactsWrapper">
-                    <Icon.Phone size={24} color="#088a36" />
+                    <Icon.Phone size={25} color="#088a36" />
                     <div className="ContactText"> Luke: 304-777-9672</div>
                 </a>
-
                 <a href="mailto:allprolandscaping1@hotmail.com" className="ContactsWrapper">
-                    <Icon.Mail size={24} color="#088a36" />
+                    <Icon.Mail size={25} color="#088a36" />
                     <div className="ContactText"> allprolandscaping1@hotmail.com</div>
                 </a>
+
             </div>
         </div>
     );
