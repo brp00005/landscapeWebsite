@@ -11,6 +11,12 @@ section {
   position: relative;
 }
 
+/* @media (max-width: 1000px){
+  section{
+    z-index: 0;
+  }
+} */
+
 .image-container {
   position: relative;
   left: 0;
@@ -128,7 +134,8 @@ img.block {
   transform: translate(-50%, -50%);
   width: 45vw;
   max-width: 450px;
-  height: 8.5vw;
+  height: 10vh;
+  min-height: 30px; 
   background-color: rgba(0, 50, 0, 0.8);
   /* color: #fff; */
   font-size: 50px;

@@ -1,5 +1,5 @@
 .overall {
-    padding: .5vh;
+    padding: 0vh;
     border: 1px solid black;
     border-radius: 1vh;
     background-color: "#cececeff";
@@ -14,7 +14,7 @@
     font-size: 2vh;
     border: none;
     background-color: "#cececeff";
-    margin-top: 30px; 
+    margin-top: 0vh; 
 }
 
 @media (max-width: 600px) {
@@ -40,8 +40,13 @@ button {
 }
 
 textarea {
-    height: 30vh;
-    background-color: "#cececeff";
+    height: 25vh;
+}
+
+@media (min-width: 800px) {
+    textarea {
+        height: 30vh;
+    }
 }
 
 button {

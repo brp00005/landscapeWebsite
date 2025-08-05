@@ -54,9 +54,9 @@ function App() {
         <ResponsiveAppBar />
 
         <Routes>{genRoutes(routes)}</Routes>
-
+        <Footer />
       </Router>
-      <Footer />
+      
     </div>
   );
 }

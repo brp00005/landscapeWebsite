@@ -134,7 +134,7 @@ class About extends React.Component {
         return (
             <div>
                 <div>
-                    <h3 style={{ textAlign: "center", paddingTop: "20px", fontSize: "2.2vh", paddingLeft: "1vw", paddingRight: "1vw" }}>All Pro Landscaping is a West Virginia company that has team members with numerous years of experience with professional landscaping work. <br />Check out the seven members of our team below!</h3>
+                    <h3 style={{ textAlign: "center", paddingTop: "20px", fontSize: "2vh", paddingLeft: "2.1vw", paddingRight: "2.1vw" }}>All Pro Landscaping is a West Virginia company that has team members with numerous years of experience with professional landscaping work. <br />Check out the seven members of our team below!</h3>
                 </div>
                 <div className="grid">
                     {cardGenerator(names, descriptions, imageArray)}

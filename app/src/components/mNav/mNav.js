@@ -45,9 +45,8 @@ function ResponsiveAppBar() {
       position="static"
       sx={{
         backgroundColor: '#13271aff',
-        color: 'red',
         boxShadow: 'none',
-        height: '6vh'
+        zIndex: 1000,
       }}
     >
       <Container maxWidth="xl">
@@ -55,7 +54,6 @@ function ResponsiveAppBar() {
           disableGutters
           sx={{
             justifyContent: 'space-between',
-            height: '100%'
           }}
         >
           {/* logo and title */}
@@ -67,7 +65,7 @@ function ResponsiveAppBar() {
               sx={{
                 fontFamily: "'Times New Roman', serif",
                 fontWeight: 700,
-                fontSize: { xs: '25px', sm: '25px', md: '30px' },
+                fontSize: { xs: '20px', sm: '15px', md: '20px' },
                 letterSpacing: '.1rem',
                 color: '#cececeff',
                 textDecoration: 'none'
@@ -86,7 +84,7 @@ function ResponsiveAppBar() {
                 to={route.href}
                 sx={{
                   fontFamily: "'Times New Roman', serif",
-                  fontSize: { xs: '0.8rem', sm: '0.9rem', md: '1rem', lg: '1.1rem' }, // Smaller font sizes
+                  fontSize: { xs: '0.8rem', sm: '0.9rem', md: '1rem', lg: '1.1rem' },
                   fontWeight: 700,
                   color: '#cececeff',
                   textTransform: 'none',
@@ -135,8 +133,8 @@ function ResponsiveAppBar() {
                     sx={{
                       textTransform: 'none',
                       fontFamily: "'Times New Roman', serif",
-                      // Adjust font size for different screen sizes in the mobile menu
-                      fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' }, // Smaller font sizes for mobile
+                      //mobile font shenanigans
+                      fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' },
                       backgroundColor: "inherit",
                       color: "white",
                       height: "10px"
