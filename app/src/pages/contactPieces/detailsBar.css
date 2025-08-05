@@ -61,7 +61,6 @@
   font-weight: bold;
   font-family: 'Times New Roman', Times, serif;
   text-wrap: 'normal';
-  margin-bottom: .5vh;
 }
 
 .TextTwo {
@@ -71,7 +70,6 @@
   font-weight: bold;
   font-family: 'Times New Roman', Times, serif;
   text-wrap: 'normal';
-  margin-bottom: 0vh;
 }
 
 /* justify content is h centering, align-items is v centering */
@@ -79,18 +77,18 @@
   display: flex;
   width: 30vh;
   height: .5vh;
-  margin-top: 3.5vh;
+  margin-top: 3vh;
   /* cursor: pointer; */
   text-decoration: none;
   font-family: 'Times New Roman', Times, serif;
   justify-content: center;
   align-items: center;
-  margin-bottom: 25px;
+  margin-bottom: 22px;
 }
 
 .ContactText {
   color: black;
-  font-size: 17px;
+  font-size: 18px;
   margin-left: 0px;
   font-family: 'Times New Roman', Times, serif;
   padding-left: 1vh;

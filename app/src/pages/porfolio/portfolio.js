@@ -51,14 +51,19 @@ class Card extends React.Component {
         const { title, text, image, path } = this.props;
 
         return (
-            <Link to={path}>
-                <article className="pcard">
-                    <CardHeader image={image} />
-                    <CardBody
-                        title={title}
-                    />
-                </article>
-            </Link>
+            <div>
+                <Link to={path}>
+                    <article className="pcard">
+                        <CardHeader image={image} />
+                        <CardBody
+                            title={title}
+                        />
+                    </article>
+                </Link>
+                <div style={{ height: '25px' }}></div>
+            </div>
+            
+
 
         );
     }
@@ -110,9 +115,12 @@ class Portfolio extends React.Component {
         const links = ["/mowing", "/landscaping", "/excavation"];
 
         return (
-            <div className="pgrid">
-                {cardGenerator(names, descriptions, imageArray, links)}
+            <div>
+                <div className="pgrid">
+                    {cardGenerator(names, descriptions, imageArray, links)}
+                </div>
             </div>
+
         );
     }
 }
