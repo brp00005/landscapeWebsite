@@ -2,12 +2,11 @@
   background-color: none;
   border-radius: 7px;
   position: relative;
-  padding: 0px;
   width: 40vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 32vh;
+  /* Removed fixed height to allow the container to fit its content */
   margin-left: 50vw;
   margin-right: 50vw;
   transform: translateX(-50%);
@@ -42,7 +41,7 @@
   }
 
   .TextOne {
-    font-size: 5vw !important;
+    font-size: 4vw !important;
     margin-bottom: 0.5vh !important;
   }
 }
@@ -85,7 +84,7 @@
     font-family: 'Times New Roman', Times, serif;
     justify-content: center;
     align-items: center;
-    margin-bottom: .5vh
+    margin-bottom: 25px;
   }
   
   .ContactText {
@@ -96,5 +95,3 @@
     padding-left: 1vh;
     
   }
-  
-  

@@ -4,7 +4,6 @@
     border-radius: 1vh;
     background-color: "#cececeff";
     width: 50vw; 
-
 }
 
 .form-container {
@@ -15,10 +14,12 @@
     border: none;
     background-color: "#cececeff";
     margin-top: 0vh; 
+    margin-bottom: 50px;
+    padding-bottom: 50px; 
 }
 
 @media (max-width: 600px) {
-    .form-container{
+    .form-container {
         width: 90vw; 
     }
 }
@@ -29,11 +30,11 @@ button {
     width: 100%;
     margin: 1vh 0;
     padding: 1vh;
-    height: 5vh;
+    min-height: 5vh;
     box-sizing: border-box;
     font-family: 'Times New Roman', Times, serif;
     font-size: 2vh;
-    border-color:grey;
+    border-color: grey;
     border-width: 2px;
     border-radius: 1vh;
     background-color: "#cececeff";
@@ -53,5 +54,5 @@ button {
     background: black;
     color: "#cececeff";
     border: none;
+    margin-bottom: 50px;
 }
-

@@ -12,8 +12,6 @@ const DetailsBar = () => {
                 </p>
             </div>}
 
-            <hr />
-
             <div className="ContactLinksContainer">
                 <a href="tel:+1-304-581-3885" className="ContactsWrapper">
                     <Icon.Phone size={24} color="#088a36" />
