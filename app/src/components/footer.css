@@ -21,6 +21,10 @@
 }
 
 @media (max-width: 1000px) {
+  .footer-bar{
+    position: static;
+  }
+
   .footer-bar.non-floating-mobile {
     position: fixed;
   }

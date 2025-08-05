@@ -11,12 +11,6 @@ section {
   position: relative;
 }
 
-/* @media (max-width: 1000px){
-  section{
-    z-index: 0;
-  }
-} */
-
 .image-container {
   position: relative;
   left: 0;
@@ -103,32 +97,12 @@ img.block {
   opacity: 1;
 }
 
-
-/*for the contact button*/
 .inner-wrapper {
   width: 400px;
-  /* button's container width */
 }
 
-/* .contactButton {
-  width: 400px;
-  height: 60px;
-  background-color: rgba(0,100,0,0.5);
-  font-size: xx-large;
-  font-family: 'Times New Roman', Times, serif;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  position: absolute;
-  transform: translateY(-50%);
-  transform: translateX(-100%);
-  z-index: 1;
-} */
-
 .contactButton {
-  position: absolute;
+  position: fixed; 
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -137,13 +111,12 @@ img.block {
   height: 10vh;
   min-height: 30px; 
   background-color: rgba(0, 50, 0, 0.8);
-  /* color: #fff; */
   font-size: 50px;
   font-family: 'Times New Roman', Times, serif;
   font-weight: 200;
   display: flex;
-
-
+  align-items: center;
+  justify-content: center;
   z-index: 10;
 }
 
@@ -160,4 +133,18 @@ img.block {
   color: "#cececeff" !important;
   box-shadow: 10px 5px 40px rgba(0, 0, 0, 0.4) !important;
   cursor: pointer !important;
+}
+
+@media (max-width: 768px) {
+  .nav-button {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .contactButton {
+    width: 200px;
+    height: 80px;
+    font-size: 30px !important;
+  }
 }
