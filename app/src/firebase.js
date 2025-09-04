@@ -19,4 +19,8 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getDatabase
+const db = getDatabase();
+const reference = ref(db, 'users/' + userID);
+
+//getting dta
+const distanceRef = ref()
