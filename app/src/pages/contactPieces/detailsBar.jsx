@@ -8,7 +8,8 @@ const DetailsBar = () => {
             {<div className='TextWrapper'>
                 {/* <p className='TextOne'>Contact Us</p> */}
                 <p className='TextOne'>
-                    Fill up the form and we'll follow up within 24 hours. Estimates are free. Feel free to directly email or call us.
+                    Fill up the form and we'll follow up within 24 hours. 
+                    Estimates are free. Feel free to directly email or call us.
                 </p>
             </div>}
 

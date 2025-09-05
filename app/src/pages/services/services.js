@@ -72,20 +72,21 @@ const Names = [
 ];
 
 const Descriptions = [
-    "We can trim edges, fill bald spots in your lawn, repair irrigation systems, and more.",
-    "We can hydroseed both commercial and residential lawns for erosion control, or landscaping.",
-    "3",
-    "We can remove the stump from your property and fill in the resulting hole on your property.",
-    "5",
-    "We can remove debris that has built up during the season, and trim any plants that require it.",
-    "7",
-    "Installation available*"
+    "We can handle routine lawn care including edging, patching bare spots, and maintaining irrigation systems.",
+    "We offer hydroseeding services available for residential and commercial properties—ideal for erosion control & new lawns.",
+    "We offer landscape installation, including planting, hardscaping, and outdoor features for your space.",
+    "We can remove stumps from your property, and handle both extraction and backfilling to leave your yard clean & stump-free.",
+    "Our excavation services include site preparation, grading, and digging for landscaping or construction projects.",
+    "Seasonal cleanup services to remove leaves, branches, and other debris, along with trimming.",
+    "We will haul away yard waste, renovation debris, and/or general clutter.",
+    "Muclch or stone will be delivered directly to your property. Installation available upon request."
 ];
 
+
 const generalInfo = (
-    <p style = {{alignItems:'center', textAlign:'center', fontFamily: "Times", fontSize: '20px', marginLeft: "10px", marginRight: "10px", marginBottom: '17px', marginTop: '20px'}}>
+    <p style={{ alignItems: 'center', textAlign: 'center', fontFamily: "Times", fontSize: '20px', marginLeft: "10px", marginRight: "10px", marginBottom: '17px', marginTop: '20px' }}>
         Here is the list of services we offer. If you have any questions or comments, feel free to reach out to us through our{" "}
-        <a href="/contact">contact page</a>,{" "} phone number or email. 
+        <a href="/contact">contact page</a>,{" "} phone number or email.
     </p>
 );
 
@@ -99,7 +100,7 @@ class Services extends React.Component {
     render() {
 
         return (
-            <div style = {{alignItems: 'center', alignText: 'center'}}>
+            <div style={{ alignItems: 'center', alignText: 'center' }}>
                 {generalInfo}
                 <div className="sgrid">
                     {cardGenerator(Names, Descriptions)}

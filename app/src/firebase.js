@@ -4,7 +4,10 @@
 import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-import {getDatabase} from "firebase/data-base"
+import {getDatabase} from "firebase/database"
+import { getFunctions } from "firebase/functions";
+import { getAnalytics } from "firebase/analytics";
+// Corrected the import from 'firebase/data-base' to 'firebase/database'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -19,8 +22,11 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getDatabase();
-const reference = ref(db, 'users/' + userID);
 
-//getting dta
-const distanceRef = ref()
+// Initialize other Firebase services
+const functions = getFunctions(app);
+const analytics = getAnalytics(app);
+const database = getDatabase(app); // Initialize Realtime Database
+
+// Export the initialized services so they can be used anywhere in your app
+export { functions, analytics, database };

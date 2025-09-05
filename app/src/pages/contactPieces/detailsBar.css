@@ -13,6 +13,110 @@
   transform: translateX(-50%);
 }
 
+.TextWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.TextOne {
+  text-align: center;
+  color: black;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.TextTwo {
+  text-align: center;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* justify content is h centering, align-items is v centering */
+.ContactsWrapper {
+  display: flex;
+  width: auto; /* Allow width to be flexible */
+  height: auto; /* Allow height to be determined by content */
+  min-height: 25px; /* Ensure it's at least as tall as the icon */
+  margin-top: 1.5vh;
+  text-decoration: none;
+  font-family: 'Times New Roman', Times, serif;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.ContactText {
+  color: black;
+  font-size: 18px;
+  margin-left: 0px;
+  font-family: 'Times New Roman', Times, serif;
+  padding-left: 1vh;
+}
+
+
+/* === TABLET STYLES START HERE === */
+/* Targets tablets in both portrait and landscape mode */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .DetailsBarWrapper {
+    flex-direction: column; /* Keep column layout but adjust for wrapping links */
+    justify-content: center; /* Center the items horizontally */
+    align-items: center;     /* Center the items vertically */
+    width: 90vw;          /* Make the container wider */
+    height: auto;         /* Adjust height based on content */
+    padding: 15px;        /* Add some internal spacing */
+    margin: 2vh auto;     /* Center the bar on the page */
+    transform: none;      /* Reset the desktop transform */
+    gap: 15px;            /* Add space between the text and contact items */
+  }
+
+  /* NEW RULE: Make the container for the links a flex row */
+  .ContactLinksContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; /* Add space between the contact links */
+  }
+
+  /* Reset margins for contact items that are now in a row */
+  .ContactsWrapper {
+    margin-top: 0;
+    margin-bottom: 0;
+    width: auto;
+    height: auto;
+  }
+
+  .TextOne {
+    font-size: 3rem; /* Adjust font size for tablets */
+    margin-bottom: 5px;
+  }
+
+  .TextTwo {
+    font-size: 1.1rem;
+  }
+}
+/* === TABLET STYLES END HERE === */
+
+/* === TABLET LANDSCAPE STYLES START HERE === */
+/* Targets tablets specifically in landscape mode to force a single line for text */
+@media (min-width: 768px) and (orientation: landscape) and (max-width: 1300px) {
+  .DetailsBarWrapper {
+    flex-wrap: nowrap; /* Prevent items from wrapping to a second line */
+  }
+
+  .TextOne, .TextTwo {
+    font-size: 3vh;
+     white-space: nowrap; /* Prevent the text itself from wrapping */
+  }
+}
+/* === TABLET LANDSCAPE STYLES END HERE === */
+
+
+/* Existing Mobile Styles (for screens 600px and smaller) */
 @media (max-width: 600px) {
   .DetailsBarWrapper {
     width: 90vw !important;
@@ -24,7 +128,8 @@
 
   .ContactsWrapper {
     width: 100% !important;
-    height: 4vh !important;
+    height: auto !important;
+    min-height: 25px;
     margin-top: 0.1vh !important;
     margin-bottom: 0.1vh !important;
     flex-wrap: wrap;
@@ -42,54 +147,8 @@
   }
 
   .TextOne {
-    font-size: 4vw !important;
-    margin-bottom: 0.5vh !important;
+    font-size: 5vw !important;
+    margin-bottom: 1.5vh !important;
   }
 }
 
-
-.TextWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.TextOne {
-  text-align: center;
-  color: black;
-  font-size: 2rem;
-  font-weight: bold;
-  font-family: 'Times New Roman', Times, serif;
-  text-wrap: 'normal';
-}
-
-.TextTwo {
-  text-align: center;
-  color: black;
-  font-size: 20px;
-  font-weight: bold;
-  font-family: 'Times New Roman', Times, serif;
-  text-wrap: 'normal';
-}
-
-/* justify content is h centering, align-items is v centering */
-.ContactsWrapper {
-  display: flex;
-  width: 30vh;
-  height: .5vh;
-  margin-top: 3vh;
-  /* cursor: pointer; */
-  text-decoration: none;
-  font-family: 'Times New Roman', Times, serif;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 22px;
-}
-
-.ContactText {
-  color: black;
-  font-size: 18px;
-  margin-left: 0px;
-  font-family: 'Times New Roman', Times, serif;
-  padding-left: 1vh;
-}
