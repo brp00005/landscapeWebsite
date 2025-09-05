@@ -1,5 +1,6 @@
 section {
-  height: 94vh;
+  /* Use 100dvh to fill the available screen height dynamically */
+  height: 100dvh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -26,9 +27,9 @@ section {
 
 section .image-container {
   width: 100vw !important;
-  height: 94vh !important;
+  /* Match the parent section's dynamic height */
+  height: 100dvh !important;
   align-items: stretch;
-
 }
 
 
@@ -111,37 +112,33 @@ img.block {
   height: 10vh;
   min-height: 30px;
   background-color: rgba(0, 50, 0, 0.8);
-  /* color: #fff; */
+  color: #fff;
   font-size: 50px;
   font-family: 'Times New Roman', Times, serif;
   font-weight: 200;
   display: flex;
-
-
+  /* Added to properly center text inside the button */
+  align-items: center;
+  justify-content: center;
   z-index: 10;
-}
-
-@media (max-width: 700px) {
-  .contactButton {
-    width: 200px;
-    height: 80px;
-    font-size: 30px !important;
-  }
 }
 
 .contactButton:hover {
   background-color: gray !important;
-  color: "#cececeff" !important;
+  /* Corrected hex color syntax */
+  color: #cecece !important;
   box-shadow: 10px 5px 40px rgba(0, 0, 0, 0.4) !important;
   cursor: pointer !important;
 }
 
+/* Media query for hiding nav buttons on smaller screens */
 @media (max-width: 768px) {
   .nav-button {
     display: none;
   }
 }
 
+/* Consolidated media query for the contact button */
 @media (max-width: 700px) {
   .contactButton {
     width: 200px;

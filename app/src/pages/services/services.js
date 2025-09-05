@@ -79,7 +79,7 @@ const Descriptions = [
     "Our excavation services include site preparation, grading, and digging for landscaping or construction projects.",
     "Seasonal cleanup services to remove leaves, branches, and other debris, along with trimming.",
     "We will haul away yard waste, renovation debris, and/or general clutter.",
-    "Muclch or stone will be delivered directly to your property. Installation available upon request."
+    "Mulch or stone will be delivered directly to your property. Installation available upon request."
 ];
 
 

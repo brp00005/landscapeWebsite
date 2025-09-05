@@ -1,7 +1,7 @@
 .sgrid {
   display: grid;
-  grid-template-columns: repeat(2, 3fr);
-  align-items: center;
+  grid-template-columns: repeat(2, 1fr); /* Using 1fr is standard practice */
+  /* align-items: center;  <-- THIS WAS REMOVED to allow cards to stretch to equal height */
   justify-content: center;
   align-self: center; 
   column-gap: 1vw;
@@ -13,16 +13,19 @@
 .scard {
   width: 40vw;
   margin: 0 auto;
-  
   margin-top: 5px;
   border-radius: 7px;
   overflow: hidden;
   box-shadow: 10px 5px 40px 0px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.5s;
   font-family: 'Times New Roman', Times, serif; 
+
+  /* --- ADDED for internal alignment --- */
+  display: flex;
+  flex-direction: column;
 }
 
-@media (max-width: 2000px) {
+@media (max-width: 999px) { /* Adjusted for clearer logic */
   .scard{
     width: 90vw;
     margin-top: 10px; 
@@ -79,11 +82,14 @@
   color: black;
   text-align: left;
   border: 0px solid #555;
+
+  /* --- ADDED to make body grow and push footer down --- */
+  flex-grow: 1;
 }
 
 .sbody-content {
   padding-bottom: 40px;
-  font-size: 17px;
+  font-size: 18.5px;
   line-height: 1.8;
   font-family: 'Times New Roman', Times, serif;
 }
