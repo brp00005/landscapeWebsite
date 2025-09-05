@@ -1,87 +1,36 @@
-// functions/index.js
-
-// Import the Firebase Functions SDK and the EmailJS module
-// The 'functions' object provides access to logger and https.onCall in v1.
-const functions = require("firebase-functions");
+const {onCall} = require("firebase-functions/v2/https");
+const {defineString} = require("firebase-functions/params");
+const {logger} = require("firebase-functions");
 const emailjs = require("@emailjs/nodejs");
-// Make sure this package is installed in functions/node_modules
 
-/**
- * sendContactEmail
- * An HTTPS Callable Cloud Function to securely send emails via EmailJS.
- * It expects 'name', 'email', and 'message' in the data payload.
- */
-exports.sendContactEmail = functions.https.onCall(async (data, context) => {
-  // Validate incoming data
-  const {name, email, message} = data;
-  // Fixed object-curly-spacing
+// Define placeholders for your secret keys from the .env file
+const SERVICE_ID = defineString("EMAILJS_SERVICE_ID");
+const TEMPLATE_ID = defineString("EMAILJS_TEMPLATE_ID");
+// CORRECTED: Use a variable that clearly represents the private key
+const PRIVATE_KEY = defineString("EMAILJS_PRIVATE_KEY");
+
+exports.sendContactEmail = onCall(async (request) => {
+  const {name, email, message} = request.data;
+
   if (!name || !email || !message) {
-    functions.logger.error(
-        "Missing required fields for sendContactEmail:",
-        // Fixed quotes
-        {data}, // Fixed object-curly-spacing
-    ); // Line break for max-len
-    throw new functions.https.HttpsError(
-        "invalid-argument", // Fixed quotes
-        "Missing required fields: name, email, or message.", // Fixed quotes
-    );
-  }
-
-  // Access the securely stored environment variables for EmailJS
-  const serviceID = functions.config().emailjs.serviceid;
-  const templateID = functions.config().emailjs.templateid;
-  const publicKey = functions.config().emailjs.publickey;
-  // This is EmailJS User ID
-
-  // Basic check for config presence (useful during initial setup)
-  if (!serviceID || !templateID || !publicKey) {
-    functions.logger.error("EmailJS API keys not configured in funcs env");
-    throw new functions.https.HttpsError(
-        "internal", // Fixed quotes
-        "Email service not configured. Please contact support.", // Fixed quotes
-    );
+    logger.error("Missing required fields:", {data: request.data});
+    throw new Error("Missing required fields: name, email, or message.");
   }
 
   try {
-    // Send the email using EmailJS.
+    // The EmailJS library expects the key in a property named 'privateKey'
     await emailjs.send(
-        serviceID,
-        templateID,
-        {
-          from_name: name,
-          from_email: email,
-          message: message, // Added trailing comma
-        },
-        {
-          publicKey: publicKey, // Added trailing comma
-        },
-    ); // Line break for max-len
-
-    functions.logger.info(
-        "Email sent successfully!", // Fixed quotes
-        {toEmail: email, fromName: name}, // Fixed object-curly-spacing, quotes
+      SERVICE_ID.value(),
+      TEMPLATE_ID.value(),
+      { from_name: name, from_email: email, message: message },
+      // CORRECTED: Pass the private key correctly
+      { privateKey: PRIVATE_KEY.value() }
     );
+
+    logger.info("Email sent successfully!", {toEmail: email, fromName: name});
     return {success: true, message: "Email sent successfully!"};
   } catch (error) {
-    // Log the detailed error for debugging in Firebase Logs
-    functions.logger.error(
-        "Error sending email via EmailJS:", // Fixed quotes
-        error,
-        {fromEmail: email, fromName: name},
-    ); // Line break for max-len
-
-    // Return a user-friendly error message to the client
-    throw new functions.https.HttpsError(
-        "internal", // Fixed quotes
-        "Failed to send email. Please try again later.", // Fixed quotes
-        error.message, // Passes only the error message string
-    );
+    logger.error("Error sending email via EmailJS:", error, { fromEmail: email });
+    throw new Error("Failed to send email. Please try again later.");
   }
 });
-
-// The boilerplate helloWorld function is commented out.
-// You can remove these commented-out lines completely or leave them for ref
-// exports.helloWorld = onRequest((request, response) => {
-//   functions.logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
