@@ -1,53 +1,39 @@
+/* Base mobile styles */
+
+/* Main slideshow container */
 section {
-  /* Use 100dvh to fill the available screen height dynamically */
-  height: 100dvh;
+  /* Full screen height minus mobile navbar (56px) */
+  height: calc(100dvh - 56px);
   width: 100vw;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #000000;
-  text-align: center;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
+  background-color: #000000;
 }
 
+/* Image container and image */
 .image-container {
-  position: relative;
-  left: 0;
+  width: 100%;
   height: 100%;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  overflow: hidden;
-  background-color: #000000;
 }
-
-section .image-container {
-  width: 100vw !important;
-  /* Match the parent section's dynamic height */
-  height: 100dvh !important;
-  align-items: stretch;
-}
-
 
 .image-container img {
-  max-width: 100%;
-  max-height: 100%;
   width: 100%;
-  object-fit: cover;
-  transition: opacity 2s ease, transform 2s ease;
+  height: 100%;
+  object-fit: cover; /* Fills container, crops if needed */
+  transition: opacity 5s ease, transform 5s ease;
 }
 
+/* JS helper classes & animation */
 img.hidden {
   display: none;
 }
 
 img.block {
   display: block;
-  animation: fadeIn 2s ease;
+  animation: fadeIn 5s ease;
 }
 
 @keyframes fadeIn {
@@ -55,14 +41,17 @@ img.block {
     opacity: 0;
     transform: scale(0.98);
   }
-
   to {
     opacity: 1;
     transform: scale(1);
   }
 }
 
+/* Slider navigation buttons */
 .nav-button {
+  /* Hidden on mobile by default */
+  display: none;
+  
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -73,15 +62,11 @@ img.block {
   border: none;
   border-radius: 50%;
   font-size: 1.5rem;
-  font-weight: normal;
   cursor: pointer;
-  display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0.8;
-  transition: background-color .9s ease, opacity 0.9s ease;
-  padding: 0;
-  line-height: 1;
+  transition: background-color 0.9s ease, opacity 0.9s ease;
   z-index: 1;
 }
 
@@ -98,26 +83,23 @@ img.block {
   opacity: 1;
 }
 
-.inner-wrapper {
-  width: 400px;
-}
-
+/* Centered contact button */
 .contactButton {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 45vw;
-  max-width: 450px;
-  height: 10vh;
-  min-height: 30px;
+  
+  /* Mobile sizing */
+  width: 200px;
+  height: 80px;
+  font-size: 30px !important;
+
   background-color: rgba(0, 50, 0, 0.8);
   color: #fff;
-  font-size: 50px;
   font-family: 'Times New Roman', Times, serif;
   font-weight: 200;
   display: flex;
-  /* Added to properly center text inside the button */
   align-items: center;
   justify-content: center;
   z-index: 10;
@@ -125,24 +107,30 @@ img.block {
 
 .contactButton:hover {
   background-color: gray !important;
-  /* Corrected hex color syntax */
   color: #cecece !important;
   box-shadow: 10px 5px 40px rgba(0, 0, 0, 0.4) !important;
   cursor: pointer !important;
 }
 
-/* Media query for hiding nav buttons on smaller screens */
-@media (max-width: 768px) {
-  .nav-button {
-    display: none;
-  }
-}
 
-/* Consolidated media query for the contact button */
-@media (max-width: 700px) {
+/* Desktop styles (769px and up) */
+@media (min-width: 769px) {
+
+  /* Adjust height for desktop navbar (64px) */
+  section {
+    height: calc(100dvh - 64px);
+  }
+
+  /* Show nav buttons on desktop */
+  .nav-button {
+    display: flex;
+  }
+
+  /* Adjust contact button for desktop */
   .contactButton {
-    width: 200px;
-    height: 80px;
-    font-size: 30px !important;
+    width: 45vw;
+    max-width: 450px;
+    height: 10vh;
+    font-size: 50px !important;
   }
 }
