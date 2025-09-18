@@ -40,7 +40,7 @@ const servicesData = [
     },
     {
         icon: 'fas fa-truck-loading',
-        title: 'Mulch and Stone Delivery',
+        title: 'Mulch/Stone Delivery',
         text: 'Mulch or stone will be delivered directly to your property. Installation available upon request.',
     },
 ];
