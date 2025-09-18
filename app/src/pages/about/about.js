@@ -7,7 +7,7 @@ import img5 from './employees/5.jpg';
 import img6 from './employees/6.jpg';
 import img7 from './employees/7.jpg';
 
-import background from '../porfolio/landImgs/2.jpeg';
+import background from '../porfolio/landImgs/25.jpeg';
 
 const About = () => {
     const employeeImages = [img1, img2, img3, img4, img5, img6, img7];
@@ -66,7 +66,7 @@ const About = () => {
             backgroundImage: `url(${background})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            filter: 'grayscale(70%) brightness(100%)',
+            filter: 'grayscale(100%) brightness(40%) contrast(110%)',
             zIndex: 0,
         },
         aboutUsContent: {
