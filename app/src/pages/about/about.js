@@ -1,148 +1,166 @@
-//from original: https://codepen.io/jamiehalvorson/pen/KNyRNVa
-//grid stuff: https://react-ui.io/components/Grid/
+import React, { useState, useEffect } from 'react';
+import img1 from './employees/1.jpg';
+import img2 from './employees/2.jpg';
+import img3 from './employees/3.jpg';
+import img4 from './employees/4.jpg';
+import img5 from './employees/5.jpg';
+import img6 from './employees/6.jpg';
+import img7 from './employees/7.jpg';
 
-import React from "react";
-import { Grid } from '@react-ui-org/react-ui';
-import "./about.css"
+import background from '../porfolio/landImgs/2.jpeg';
 
-class CardHeader extends React.Component {
-    render() {
-        const { image } = this.props;
-        const style = {
-            backgroundImage: `url(${image})`,
+const About = () => {
+    const employeeImages = [img1, img2, img3, img4, img5, img6, img7];
+
+    const teamMembers = [
+        {
+            name: 'Larry Reaville',
+            description: '25+ years of landscaping, hardscaping, & excavation experience in both West Virginia and New Jersey.',
+            phone: '856-373-3885',
+        },
+        {
+            name: 'Luke Reaville',
+            description: '7+ years of landscaping, snow removal, etc.',
+            phone: '304-777-9672',
+        },
+        { name: 'n3', description: 'd3' },
+        { name: 'n4', description: 'd4' },
+        { name: 'n5', description: 'd5' },
+        { name: 'n6', description: 'd6' },
+        { name: 'n7', description: 'd7' },
+    ];
+
+    const greyShades = [28, 27, 26, 28, 25, 27, 26];
+
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
         };
-        return (
-            <header style={style} className="card-header" />
-        );
-    }
-}
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
-/* class Button extends React.Component {
-  render() {
+    const PhoneIcon = () => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style={{ marginRight: '8px', verticalAlign: 'middle' }}>
+            <path d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.28 1.465l-.755 1.59a.47.47 0 0 0 .025.465l.313.313a11.8 11.8 0 0 0 5.105 5.105l.313.313a.47.47 0 0 0 .465.025l1.59-.755a1.5 1.5 0 0 1 1.465.28l2.257 2.257a1.745 1.745 0 0 1 .163 2.611l-1.034 1.034a1.745 1.745 0 0 1-2.433-.364c-1.352-1.352-3.42-3.42-6.14-6.14a1.745 1.745 0 0 1-.364-2.433L.851 3.115a1.745 1.745 0 0 1 .163-2.611l1.034-1.034z" />
+        </svg>
+    );
+
+    const styles = {
+        aboutUsContainer: {
+            position: 'relative',
+            color: 'white',
+            fontFamily: "'Times New Roman', Times, serif",
+            textAlign: 'center',
+            overflow: 'hidden',
+            backgroundImage: `url(${background})`,
+        },
+        aBackgroundImage: {
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            backgroundImage: `url(${background})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            filter: 'grayscale(70%) brightness(100%)',
+            zIndex: 0,
+        },
+        aboutUsContent: {
+            position: 'relative',
+            zIndex: 1,
+            padding: '40px 20px',
+        },
+        h1: {
+            margin: '0 0 10px 0',
+            paddingBottom: '10px',
+            borderBottom: '2px solid white',
+            display: 'inline-block',
+            fontSize: isMobile ? '2rem' : '2.5rem',
+        },
+        pHeader: {
+            margin: '10px auto 0 auto',
+            maxWidth: '800px',
+            fontSize: isMobile ? '1rem' : '1.2rem',
+            lineHeight: 1.6,
+        },
+        banner: {
+            color: 'white',
+            fontFamily: "'Times New Roman', Times, serif",
+            display: 'flex',
+            alignItems: 'stretch',
+            flexDirection: isMobile ? 'column' : 'row',
+            textAlign: isMobile ? 'center' : 'left',
+        },
+        imageContainer: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexShrink: 0,
+            padding: isMobile ? '20px 0 0 0' : '0',
+        },
+        teamImage: {
+            height: isMobile ? '150px' : '100%',
+            width: isMobile ? '150px' : '200px',
+            objectFit: 'cover',
+        },
+        textContainer: {
+            padding: '30px',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: isMobile ? 'center' : 'flex-start',
+            flexGrow: 1,
+        },
+        h2: { margin: 0, fontSize: isMobile ? '1.8rem' : '2rem' },
+        p: { margin: '10px 0', fontSize: isMobile ? '1.1rem' : '1.3rem' },
+        phoneLink: {
+            color: '#a7d8ff',
+            textDecoration: 'none',
+            display: 'inline-flex',
+            alignItems: 'center',
+            fontSize: isMobile ? '1.1rem' : '1.3rem',
+        },
+    };
+
     return (
-      <button className="button button-primary">
-        <i className="fa fa-chevron-right"></i> Find out more
-      </button>
-    );
-  }
-} */
-
-class CardBody extends React.Component {
-    render() {
-        const { title, text } = this.props;
-        return (
-            <div className="card-body">
-                <h2 className="center">{title}</h2>
-                <hr />
-                <p className="body-content">{text}</p>
-                {/* <Button/> */}
-            </div>
-        );
-    }
-}
-
-
-
-class Card extends React.Component {
-    render() {
-        /* magic */
-        const { title, text, image } = this.props;
-
-        return (
-
-            <article className="card">
-                <CardHeader image={image} />
-                <CardBody
-                    title={title}
-                    text={text}
-                />
-            </article>
-        );
-    }
-}
-
-//traversing directory: https://fmennen.de/post/getting-all-files-in-a-directory-using-java-script
-
-
-/* function traverseDirectory(directoryPath) {
-    const fs = require('fs');
-    const files = fs.readdirSync(directoryPath);
-
-
-    const arr = new Array();
-
-        files.forEach((file) => {
-            const filePath = directoryPath + '/' + file;
-            const stats = fs.statSync(filePath);
-
-            if (stats.isDirectory()) {
-                traverseDirectory(filePath); // recursively call the function for subdirectories
-            } else {
-                arr.push(filePath)
-            }
-        }
-    );
-    return arr;
-} */
-
-function cardGenerator(titles, texts, images) {
-    return titles.map((title, i) => (
-        <Card key={i} title={title} text={texts[i]} image={images[i]} />
-    ));
-}
-
-
-
-
-/* grid, then card, then title/description etc etc. make fx to go ahead and load in names of employees and such */
-/* one owner, 6 employees */
-class About extends React.Component {
-
-    render() {
-        const names = [
-            "Larry Reaville",
-            "Luke Reaville",
-            "n3",
-            "n4",
-            "n5",
-            "n6",
-            "n7"
-        ];
-
-        const descriptions = [
-            "25+ years of landscaping, hardscaping, & excavation experience in both West Virginia and New Jersey. Phone: 856-373-3885",
-            "7+ years of landscaping, snow removal, etc. Phone: 304-777-9672",
-            "d3",
-            "d4",
-            "d5",
-            "d6",
-            "d7"
-        ];
-
-
-        const imageArray = [
-            require('./employees/n1.jpg'),
-            require('./employees/n2.jpg'),
-            require('./employees/n3.jpg'),
-            require('./employees/n4.jpg'),
-            require('./employees/n5.jpg'),
-            require('./employees/n6.jpg'),
-            require('./employees/n7.jpg'),
-        ];
-
-
-        return (
-            <div>
-                <div>
-                    <h3 style={{ textAlign: "center", paddingTop: "20px", fontSize: "2vh", paddingLeft: "2.1vw", paddingRight: "2.1vw" }}>All Pro Landscaping is a West Virginia company that has team members with numerous years of experience with professional landscaping work. <br />Check out the seven members of our team below!</h3>
-                </div>
-                <div className="grid">
-                    {cardGenerator(names, descriptions, imageArray)}
+        <div>
+            <div style={styles.aboutUsContainer}>
+                <div style={styles.aBackgroundImage}></div>
+                <div style={styles.aboutUsContent}>
+                    <h1 style={styles.h1}>About Us</h1>
+                    <p style={styles.pHeader}>
+                        We are a West Virginia-based company with numerous years of landscaping experience. <br />Check out our 7-member team below.
+                    </p>
                 </div>
             </div>
-        );
-    }
-}
 
+            {teamMembers.map((member, index) => (
+                <header key={index} style={{ ...styles.banner, backgroundColor: `hsl(0, 0%, ${greyShades[index]}%)` }}>
+                    <div style={styles.imageContainer}>
+                        <img
+                            src={employeeImages[index]}
+                            alt={`${member.name}'s profile`}
+                            style={styles.teamImage}
+                        />
+                    </div>
+                    <div style={styles.textContainer}>
+                        <h2 style={styles.h2}>{member.name}</h2>
+                        <p style={styles.p}>{member.description}</p>
+                        {member.phone && (
+                            <a href={`tel:${member.phone}`} style={styles.phoneLink}>
+                                <PhoneIcon />
+                                {member.phone}
+                            </a>
+                        )}
+                    </div>
+                </header>
+            ))}
+        </div>
+    );
+};
 
 export default About;
