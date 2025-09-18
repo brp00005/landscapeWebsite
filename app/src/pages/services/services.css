@@ -1,10 +1,10 @@
-
 /*
-	Spectral by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+    Spectral by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+/* --- Typography --- */
 p {
     margin: 0;
 }
@@ -40,6 +40,18 @@ a:hover {
 }
 
 /* --- Layout Wrappers --- */
+html, body {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#page-wrapper {
+    overflow: visible !important;
+    height: auto !important;
+}
+
 .wrapper {
     padding: 3vh;
 }
@@ -47,7 +59,9 @@ a:hover {
 .wrapper.style3 {
     background-color: #004400;
     color: #d3d4e4;
-    min-height: 110vh
+    min-height: 110vh;
+    height: auto;
+    padding-bottom: 5em;
 }
 
 .wrapper.special {
@@ -88,8 +102,7 @@ header.major p {
 }
 
 .features li {
-    /* CHANGED: Reduced top padding from 4em to 2.5em */
-    padding: 2.5em 4em 2em 6em; 
+    padding: 2.5em 4em 2em 6em;
     display: block;
     position: relative;
     text-align: left;
@@ -116,22 +129,23 @@ header.major p {
     color: #00ffcc;
     position: absolute;
     left: 1.75em;
-    /* CHANGED: Reduced top position to match new padding */
     top: 1.75em;
     font-size: 1.5em;
     line-height: 1;
 }
 
 /* --- Color Overrides for Style3 --- */
-.wrapper.style3 h2, .wrapper.style3 h3 {
+.wrapper.style3 h2,
+.wrapper.style3 h3 {
     color: #ffffff;
 }
+
 .wrapper.style3 header.major h2 {
     border-color: rgba(255, 255, 255, 0.35);
 }
+
 .wrapper.style3 header.major p {
     color: #d3d4e4;
-    
 }
 
 /* --- Responsive Adjustments --- */
@@ -145,14 +159,16 @@ header.major p {
     .wrapper {
         padding: 4em 3em 2em 3em;
     }
+
     .inner {
         width: 100%;
     }
+
     .features li {
-        /* CHANGED: Reduced top padding for medium screens */
         padding: 2em 2em 1em 2em;
         text-align: center;
     }
+
     .icon:before {
         left: 0;
         margin: 0 0 1em 0;
@@ -166,12 +182,15 @@ header.major p {
         font-size: 11pt;
         letter-spacing: 0.0375em;
     }
+
     .wrapper {
         padding: 3em 2em 1em 2em;
     }
+
     header.major {
         margin: 0 0 2em 0;
     }
+
     .features li {
         padding: 3em 0 1em 0;
         background-color: transparent !important;
@@ -179,7 +198,6 @@ header.major p {
         width: 100%;
     }
 
-    
     .features li:first-child {
         border-top: 0;
     }

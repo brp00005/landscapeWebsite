@@ -52,7 +52,7 @@ const Services = () => {
                 <header className="major">
                     <h2>Our Services</h2>
                     <p>
-                        Here is the list of services we offer. If you have any questions or comments, feel free to reach out to us through our
+                        Here is the list of services we offer. If you have any questions or comments, feel free to reach out to us through our  
                         <a href="/contact"> contact page</a>, phone number or email.
                     </p>
                 </header>
