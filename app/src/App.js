@@ -13,7 +13,7 @@ import About from "./pages/about/about";
 import Contact from "./pages/contactPieces/contact";
 import Services from "./pages/services/services";
 import Home from "./pages/home";
-import Landscaping from "./pages/porfolio/landscaping";
+import Landscaping from "./pages/portfolio/landscaping"; 
 
 import ResponsiveAppBar from "./components/mNav/mNav";
 import Footer from "./components/footer";

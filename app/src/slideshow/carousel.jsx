@@ -3,16 +3,20 @@ import './carousel.css';
 import { Button } from 'antd';
 import { Link } from 'react-router-dom';
 
+import img1 from './22.jpeg';
+import img2 from './20.jpeg';
+import img3 from './23.jpeg';
+import img4 from './24.jpeg';
+import img5 from './25.jpeg';
+// FIX #2: Make sure all images you use are imported. I've removed img6 below.
 
-// images from pexels.com
 const images = [
-    { id: 1, url: "https://images.pexels.com/photos/29089597/pexels-photo-29089597/free-photo-of-stunning-autumn-beach-sunset-with-waves.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
-    { id: 2, url: "https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg" },
-    { id: 3, url: "https://images.pexels.com/photos/2049422/pexels-photo-2049422.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
-    { id: 4, url: "https://images.pexels.com/photos/325044/pexels-photo-325044.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
-    { id: 5, url: "https://images.pexels.com/photos/1485894/pexels-photo-1485894.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
-    { id: 6, url: "https://images.pexels.com/photos/1485894/pexels-photo-1485894.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
-]
+    { id: 1, src: img1 },
+    { id: 2, src: img2 },
+    { id: 3, src: img3 },
+    { id: 4, src: img4 },
+    { id: 5, src: img5 },
+];
 
 const ImageCarousel = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -42,13 +46,13 @@ const ImageCarousel = () => {
 
                 {images.map((image, index) => (
                     <img
-                        src={image.url}
+                        // FIX #1: Access the 'src' property, not 'url'
+                        src={image.src}
                         alt="Morgantown WV Landscaping Image"
                         className={currentImageIndex === index ? 'block' : 'hidden'}
                         key={image.id}
                     />
                 ))}
-
 
                 <Link to="/contact">
                     <Button type="primary" className="contactButton">
@@ -56,13 +60,10 @@ const ImageCarousel = () => {
                     </Button>
                 </Link>
 
-
-
                 <button className="nav-button right" onClick={handleNextClick}>&gt;</button>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default ImageCarousel
-
+export default ImageCarousel;

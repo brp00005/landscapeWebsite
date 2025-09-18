@@ -7,7 +7,7 @@ import img5 from './employees/5.jpg';
 import img6 from './employees/6.jpg';
 import img7 from './employees/7.jpg';
 
-import background from '../porfolio/landImgs/25.jpeg';
+import background from '../portfolio/landImgs/25.jpeg';
 
 const About = () => {
     const employeeImages = [img1, img2, img3, img4, img5, img6, img7];
