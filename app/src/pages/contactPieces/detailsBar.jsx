@@ -5,15 +5,16 @@ import './detailsBar.css';
 const DetailsBar = () => {
     return (
         <div className="DetailsBarWrapper">
-            {<div className='TextWrapper'>
-                {/* <p className='TextOne'>Contact Us</p> */}
+            {/* {<div className='TextWrapper'>
+                
                 <p className='TextOne'>
                     Fill up the form and we'll follow up within 24 hours. 
                     Estimates are free. Feel free to directly email or call us.
                 </p>
-            </div>}
+            </div>} */}
 
             <div className="ContactLinksContainer">
+                <p className = "ContactText">Feel free to call/email, or use the form!</p>
                 
                 <a href="tel:+1-304-581-3885" className="ContactsWrapper">
                     <Icon.Phone size={25} color="#088a36" />

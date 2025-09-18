@@ -51,7 +51,7 @@ function Contact() {
     };
 
     return (
-        <div>
+        <div className="contact-page-background">
             <DetailsBar />
             <form className="form-container" ref={form} onSubmit={sendEmail}>
                 <div className='input'>
@@ -59,7 +59,7 @@ function Contact() {
                     <input type="email" name="email" placeholder="Email" required />
                 </div>
                 <div>
-                    <textarea name="message" placeholder="Message and phone number" required />
+                    <textarea name="message" placeholder="Message & phone number" required />
                 </div>
                 <input type="submit" value="Submit" id="input-submit" />
             </form>
