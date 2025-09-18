@@ -1,7 +1,7 @@
 .overall {
     padding: 0vh;
     border: 1px solid black;
-    border-radius: 1vh;
+    border-radius: 0vh;
     background-color: "#cececeff";
     width: 50vw; 
 }
@@ -36,7 +36,7 @@ button {
     font-size: 2vh;
     border-color: grey;
     border-width: 2px;
-    border-radius: 1vh;
+    border-radius: 0vh;
     background-color: "#cececeff";
 }
 

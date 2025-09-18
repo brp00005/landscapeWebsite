@@ -25,7 +25,7 @@ import { Link as RouterLink } from 'react-router-dom';
 const routes = [
   { text: 'About', href: '/about' },
   { text: 'Contact', href: '/contact' },
-  { text: 'Gallery', href: '/portfolio' },
+  { text: 'Gallery', href: '/landscaping' },
   { text: 'Services', href: '/services' }
 ];
 

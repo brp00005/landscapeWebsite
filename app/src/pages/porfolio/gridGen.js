@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './landscaping.css';
 
-function GridGen({ columns, title }) {
+function GridGen({ columns }) {
     const [isOpen, setIsOpen] = useState(false);
     const [modalImg, setModalImg] = useState('');
     const [caption, setCaption] = useState('');
@@ -33,9 +33,6 @@ function GridGen({ columns, title }) {
 
     return (
         <div>
-            <div className="title">
-                <h1>{title}</h1>
-            </div>
             {isPhoneScreen ? (
                 <div className="row">
                     <div className="column">

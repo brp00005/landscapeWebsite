@@ -11,12 +11,9 @@ import {
 //import Home from "./pages";
 import About from "./pages/about/about";
 import Contact from "./pages/contactPieces/contact";
-import Portfolio from "./pages/porfolio/portfolio";
 import Services from "./pages/services/services";
 import Home from "./pages/home";
 import Landscaping from "./pages/porfolio/landscaping";
-import Excavation from "./pages/porfolio/excavation";
-import Mowing from "./pages/porfolio/mowing";
 
 import ResponsiveAppBar from "./components/mNav/mNav";
 import Footer from "./components/footer";
@@ -32,11 +29,8 @@ const routes = [
   ["/home", Home],
   ["/about", About],
   ["/contact", Contact],
-  ["/portfolio", Portfolio],
   ["/services", Services],
-  ["/mowing", Mowing],
   ["/landscaping", Landscaping],
-  ["/excavation", Excavation],
 ];
 
 function genRoutes(array) {

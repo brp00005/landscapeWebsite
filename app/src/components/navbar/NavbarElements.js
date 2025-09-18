@@ -73,7 +73,7 @@ export const NavBtn = styled.nav`
 
 //sign up button
 export const NavBtnLink = styled(Link)`
-    border-radius: 4px;
+    border-radius: 0px;
     //button color 
     background:rgb(255, 3, 221);
     padding: 10px 22px;
