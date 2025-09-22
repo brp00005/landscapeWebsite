@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './carousel.css';
 import { Button } from 'antd';
 import { Link } from 'react-router-dom';
+import * as Icon from 'react-feather';
 
 import img1 from './22.jpeg';
 import img2 from './20.jpeg';
@@ -11,12 +12,13 @@ import img5 from './25.jpeg';
 // FIX #2: Make sure all images you use are imported. I've removed img6 below.
 
 const images = [
-    { id: 1, src: img1 },
-    { id: 2, src: img2 },
-    { id: 3, src: img3 },
-    { id: 4, src: img4 },
-    { id: 5, src: img5 },
+    { id: 1, src: img1, alt: "Lush green lawn. Professional landscaping project in the Morgantown WV/Preston County area" },
+    { id: 2, src: img2, alt: "Stone pathway and trimmed hedges. Professional landscaping project in the Morgantown WV/Preston County area" },
+    { id: 3, src: img3, alt: "Colorful backyard garden with vibrant flowers and mulch. Professional landscaping project in the Morgantown WV/Preston County area" },
+    { id: 4, src: img4, alt: "Outdoor patio with decorative landscaping features. Professional landscaping project in the Morgantown WV/Preston County area" },
+    { id: 5, src: img5, alt: "Front yard curb appeal with manicured shrubs. Professional landscaping project in the Morgantown WV/Preston County area" },
 ];
+
 
 const ImageCarousel = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -48,7 +50,7 @@ const ImageCarousel = () => {
                     <img
                         // FIX #1: Access the 'src' property, not 'url'
                         src={image.src}
-                        alt="Morgantown WV Landscaping Image"
+                        alt={image.alt}
                         className={currentImageIndex === index ? 'block' : 'hidden'}
                         key={image.id}
                     />
@@ -56,9 +58,16 @@ const ImageCarousel = () => {
 
                 <Link to="/contact">
                     <Button type="primary" className="contactButton">
-                        Contact Us!
+                        <div className="contactContent">
+                            <div>Contact Us!</div>
+                            {/* <a href="tel:+1-856-373-3455" className="ContactsWrapper">
+                                <Icon.Phone size={25} color="#088a36" />
+                                <div className="ContactText">Cell: 856-373-3455</div>
+                            </a> */}
+                        </div>
                     </Button>
                 </Link>
+
 
                 <button className="nav-button right" onClick={handleNextClick}>&gt;</button>
             </div>

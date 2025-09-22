@@ -1,99 +1,117 @@
 import React, { useState, useEffect } from 'react';
 import './landscaping.css';
 
-/* function close  */
+/**
+ * GridGen Component
+ * -----------------
+ * This component renders a responsive image grid for a landscaping gallery.
+ * It supports both high-resolution and low-resolution image sets and adapts
+ * based on the user's device type (phone vs. tablet/desktop).
+ *
+ * Props:
+ * - columns: Array of arrays containing high-resolution image sources.
+ * - columns2: Array of arrays containing low-resolution image sources.
+ *
+ * Behavior:
+ * - On phones (screen width < 992px):
+ *    - Uses `columns` (high-res) for both the grid and the popup modal.
+ * - On tablets and desktops:
+ *    - Uses `columns2` (low-res) for the grid.
+ *    - Uses `columns` (high-res) for the popup modal.
+ *
+ * Features:
+ * - Modal popup with escape key support.
+ * - Responsive layout with dynamic resizing.
+ * - Alt text descriptions for accessibility.
+ *
+ * Usage:
+ * <GridGen columns={highResColumns} columns2={lowResColumns} />
+ */
 
-function GridGen({ columns }) {
-    const [isOpen, setIsOpen] = useState(false);
-    const [modalImg, setModalImg] = useState('');
-    const [caption, setCaption] = useState('');
-    const [isPhoneScreen, setIsPhoneScreen] = useState(window.innerWidth < 992);
+const altTexts = [/* your alt text array as before */];
 
-    const defaultAltText = "Landscaping in Morgantown, WV";
+function GridGen({ columns, columns2 }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [modalImg, setModalImg] = useState('');
+  const [caption, setCaption] = useState('');
+  const [isPhoneScreen, setIsPhoneScreen] = useState(window.innerWidth < 992);
 
-    useEffect(() => {
-        const handleResize = () => {
-            setIsPhoneScreen(window.innerWidth < 992);
-        };
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
+  const defaultAltText = "All pro landscaping project in WV";
 
-    /*for escape key*/
-    useEffect(() => {
-        const handleKeyDown = (event) => {
-            if (event.key === 'Escape') {
-                closeModal();
-            }
-        };
+  useEffect(() => {
+    const handleResize = () => {
+      setIsPhoneScreen(window.innerWidth < 992);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
-        if (isOpen) {
-            window.addEventListener('keydown', handleKeyDown);
-        }
-
-        return () => {
-            window.removeEventListener('keydown', handleKeyDown);
-        };
-    }, [isOpen]);
-
-    const openModal = (src) => {
-        setModalImg(src);
-        setCaption(defaultAltText);
-        setIsOpen(true);
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
     };
 
-    const closeModal = () => {
-        setIsOpen(false);
-        setModalImg('');
-        setCaption('');
+    if (isOpen) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
     };
+  }, [isOpen]);
 
-    const allImagesFlattened = columns.flat();
+  const openModal = (index) => {
+    const highResFlat = columns.flat();
+    setModalImg(highResFlat[index]);
+    setCaption(altTexts[index] || defaultAltText);
+    setIsOpen(true);
+  };
 
-    return (
-        <div>
-            {isPhoneScreen ? (
-                <div className="row">
-                    <div className="column">
-                        {allImagesFlattened.map((src, j) => (
-                            <img
-                                key={j}
-                                src={src}
-                                alt={defaultAltText}
-                                style={{ width: "100%", display: "block", cursor: "pointer" }}
-                                onClick={() => openModal(src)}
-                            />
-                        ))}
-                    </div>
-                </div>
-            ) : (
-                <div className="row">
-                    {columns.map((imgs, i) => (
-                        <div
-                            key={i}
-                            className="column"
-                        >
-                            {imgs.map((src, j) => (
-                                <img
-                                    key={j}
-                                    src={src}
-                                    alt={defaultAltText}
-                                    style={{ width: "100%", display: "block", cursor: "pointer" }}
-                                    onClick={() => openModal(src)}
-                                />
-                            ))}
-                        </div>
-                    ))}
-                </div>
-            )}
-            {isOpen && (
-                <div className="modal-overlay" onClick={closeModal}>
-                    <span className="close" onClick={closeModal}>&times;</span>
-                    <img className="modal-content" src={modalImg} alt={caption} onClick={(e) => e.stopPropagation()} />
-                </div>
-            )}
+  const closeModal = () => {
+    setIsOpen(false);
+    setModalImg('');
+    setCaption('');
+  };
+
+  const gridColumns = isPhoneScreen ? columns : columns2;
+
+  let imageCounter = 0;
+
+  return (
+    <div>
+      <div className="row">
+        {gridColumns.map((imgs, i) => (
+          <div key={i} className="column">
+            {imgs.map((src, j) => {
+              const index = imageCounter++;
+              return (
+                <img
+                  key={index}
+                  src={src}
+                  alt={altTexts[index]}
+                  style={{ width: "100%", display: "block", cursor: "pointer" }}
+                  onClick={() => openModal(index)}
+                />
+              );
+            })}
+          </div>
+        ))}
+      </div>
+      {isOpen && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <span className="close" onClick={closeModal}>&times;</span>
+          <img
+            className="modal-content"
+            src={modalImg}
+            alt={caption}
+            onClick={(e) => e.stopPropagation()}
+          />
         </div>
-    );
+      )}
+    </div>
+  );
 }
 
 export default GridGen;
