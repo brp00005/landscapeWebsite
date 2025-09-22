@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './landscaping.css';
 
+/* function close  */
+
 function GridGen({ columns }) {
     const [isOpen, setIsOpen] = useState(false);
     const [modalImg, setModalImg] = useState('');
@@ -16,6 +18,23 @@ function GridGen({ columns }) {
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
+
+    /*for escape key*/
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        };
+
+        if (isOpen) {
+            window.addEventListener('keydown', handleKeyDown);
+        }
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [isOpen]);
 
     const openModal = (src) => {
         setModalImg(src);

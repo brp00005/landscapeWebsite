@@ -7,7 +7,7 @@ import img5 from './employees/5.jpg';
 import img6 from './employees/6.jpg';
 import img7 from './employees/7.jpg';
 
-import background from '../portfolio/landImgs/25.jpeg';
+import background from '../../slideshow/25.jpeg';
 
 const About = () => {
     const employeeImages = [img1, img2, img3, img4, img5, img6, img7];
@@ -139,7 +139,7 @@ const About = () => {
                 <div style={styles.aboutUsContent}>
                     <h1 style={styles.h1}>About Us</h1>
                     <p style={styles.pHeader}>
-                        We are a West Virginia-based company with numerous years of landscaping experience. <br />Check out our 7-member team below.
+                        We are a West Virginia company with numerous years of landscaping experience. <br />Check out our 7-member team below!
                     </p>
                 </div>
             </div>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './landscaping.css';
 import GridGen from './gridGen';
 
-import img0 from './landImgs/0.jpeg';
+/* import img0 from './landImgs/0.jpeg';
 import img1 from './landImgs/1.jpg';
 import img2 from './landImgs/2.jpeg';
 import img3 from './landImgs/3.jpg';
@@ -36,25 +36,22 @@ import img30 from './landImgs/30.jpeg';
 import img31 from './landImgs/31.jpeg';
 import img32 from './landImgs/32.jpeg';
 import img33 from './landImgs/33.jpeg';
-import img34 from './landImgs/34.jpeg';
+import img34 from './landImgs/34.jpeg'; */
 
-
+const images = [];
+for (let i = 0; i <= 34; i++) {
+    images.push(require(`./${i}.webp`));
+}
 
 const Landscaping = () => {
-
     const columns = [
-        [img0, img1, img2, img3, img4, img5, img6, img7, img8, img34],         // 9 images
-        [img9, img10, img11, img12, img13, img14, img15, img16, img17], // 9 images
-        [img18, img19, img20, img21, img22, img23, img24, img25],       // 8 images
-        [img26, img27, img28, img29, img30, img31, img32, img33] // 9 images
+        [images[0], images[1], images[2], images[3], images[4], images[5], images[6], images[7], images[8], images[34]],
+        [images[9], images[10], images[11], images[12], images[13], images[14], images[15], images[16], images[17]],
+        [images[18], images[19], images[20], images[21], images[22], images[23], images[24], images[25]],
+        [images[26], images[27], images[28], images[29], images[30], images[31], images[32], images[33]]
     ];
 
-
-
-
-    return (
-        <GridGen columns={columns} />
-    );
+    return <div className="padding"><GridGen columns={columns} />;</div>
 };
 
 export default Landscaping;

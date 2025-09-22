@@ -14,7 +14,7 @@ const DetailsBar = () => {
             </div>} */}
 
             <div className="ContactLinksContainer">
-                <p className = "ContactText">Feel free to call/email, or use the form!</p>
+                <p className = "ContactText">Feel free to call/email, or use the form! Estimates are free. </p>
                 
                 <a href="tel:+1-304-581-3885" className="ContactsWrapper">
                     <Icon.Phone size={25} color="#088a36" />
