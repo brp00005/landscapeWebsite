@@ -40,16 +40,13 @@
 .ContactsWrapper {
   display: flex;
   width: auto;
-  /* Allow width to be flexible */
   height: auto;
-  /* Allow height to be determined by content */
   min-height: 25px;
-  /* Ensure it's at least as tall as the icon */
   margin-top: 1.5vh;
   text-decoration: none;
   font-family: 'Times New Roman', Times, serif;
   justify-content: center;
-  align-items: center;
+  align-items: center; /* <-- Kept 'center' for alignment */
   margin-bottom: 15px;
 }
 
@@ -63,27 +60,17 @@
 
 
 /* === TABLET STYLES START HERE === */
-/* Targets tablets in both portrait and landscape mode */
 @media (min-width: 601px) and (max-width: 1024px) {
   .DetailsBarWrapper {
     flex-direction: column;
-    /* Keep column layout but adjust for wrapping links */
     justify-content: center;
-    /* Center the items horizontally */
     align-items: center;
-    /* Center the items vertically */
     width: 90vw;
-    /* Make the container wider */
     height: auto;
-    /* Adjust height based on content */
     padding: 15px;
-    /* Add some internal spacing */
     margin: 2vh auto;
-    /* Center the bar on the page */
     transform: none;
-    /* Reset the desktop transform */
     gap: 15px;
-    /* Add space between the text and contact items */
   }
 
   /* NEW RULE: Make the container for the links a flex row */
@@ -93,10 +80,8 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
-    /* Add space between the contact links */
   }
 
-  /* Reset margins for contact items that are now in a row */
   .ContactsWrapper {
     margin-top: 0;
     margin-bottom: 0;
@@ -106,7 +91,6 @@
 
   .TextOne {
     font-size: 3rem;
-    /* Adjust font size for tablets */
     margin-bottom: 5px;
   }
 
@@ -118,18 +102,15 @@
 /* === TABLET STYLES END HERE === */
 
 /* === TABLET LANDSCAPE STYLES START HERE === */
-/* Targets tablets specifically in landscape mode to force a single line for text */
 @media (min-width: 768px) and (orientation: landscape) and (max-width: 1300px) {
   .DetailsBarWrapper {
     flex-wrap: nowrap;
-    /* Prevent items from wrapping to a second line */
   }
 
   .TextOne,
   .TextTwo {
     font-size: 3vh;
     white-space: nowrap;
-    /* Prevent the text itself from wrapping */
   }
 }
 
@@ -142,7 +123,6 @@
     width: 90vw !important;
     height: auto !important;
     margin: 1vh auto !important;
-    /* center horizontally with auto */
     transform: none !important;
     padding: 1vh 2vw !important;
   }
@@ -151,8 +131,7 @@
     width: 100% !important;
     height: auto !important;
     min-height: 25px;
-    margin-top: 0.1vh !important;
-    margin-bottom: 0.1vh !important;
+    margin-top: 2vh !important;
     flex-wrap: wrap;
   }
 
@@ -163,11 +142,9 @@
   }
 
   .ContactText {
-    
     justify-content: center !important;
     text-align: center !important;
-    padding-top: 1.5vh;
-   
+    /* padding-top: 1.5vh; <-- This stays removed */
   }
 
   .TextOne {
