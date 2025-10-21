@@ -6,8 +6,9 @@ import img4 from './employees/4.jpg';
 import img5 from './employees/5.jpg';
 import img6 from './employees/6.jpg';
 import img7 from './employees/7.jpg';
+import * as Icon from 'react-feather';
 
-import background from '../../slideshow/25.jpeg';
+import background from '../../slideshow/25.webp';
 
 const About = () => {
     const employeeImages = [img1, img2, img3, img4, img5, img6, img7];
@@ -30,7 +31,7 @@ const About = () => {
         { name: 'n7', description: 'd7' },
     ];
 
-    const greyShades = [28, 27, 26, 28, 25, 27, 26];
+    const greyShades = [14, 25, 20, 15, 10, 25, 17];
 
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
@@ -41,12 +42,6 @@ const About = () => {
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
-
-    const PhoneIcon = () => (
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style={{ marginRight: '8px', verticalAlign: 'middle' }}>
-            <path d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.28 1.465l-.755 1.59a.47.47 0 0 0 .025.465l.313.313a11.8 11.8 0 0 0 5.105 5.105l.313.313a.47.47 0 0 0 .465.025l1.59-.755a1.5 1.5 0 0 1 1.465.28l2.257 2.257a1.745 1.745 0 0 1 .163 2.611l-1.034 1.034a1.745 1.745 0 0 1-2.433-.364c-1.352-1.352-3.42-3.42-6.14-6.14a1.745 1.745 0 0 1-.364-2.433L.851 3.115a1.745 1.745 0 0 1 .163-2.611l1.034-1.034z" />
-        </svg>
-    );
 
     /*
         Spectral by HTML5 UP
@@ -158,7 +153,8 @@ const About = () => {
                         <p style={styles.p}>{member.description}</p>
                         {member.phone && (
                             <a href={`tel:${member.phone}`} style={styles.phoneLink}>
-                                <PhoneIcon />
+                                <Icon.Phone size={17} color="#088a36" />
+                                <p> &nbsp;&nbsp;</p>
                                 {member.phone}
                             </a>
                         )}

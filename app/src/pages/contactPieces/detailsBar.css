@@ -10,7 +10,7 @@
   height: auto;
   margin-left: 50vw;
   margin-right: 50vw;
-  padding-bottom: 5vh; 
+  padding-bottom: 5vh;
   transform: translateX(-50%);
 }
 
@@ -39,9 +39,12 @@
 /* justify content is h centering, align-items is v centering */
 .ContactsWrapper {
   display: flex;
-  width: auto; /* Allow width to be flexible */
-  height: auto; /* Allow height to be determined by content */
-  min-height: 25px; /* Ensure it's at least as tall as the icon */
+  width: auto;
+  /* Allow width to be flexible */
+  height: auto;
+  /* Allow height to be determined by content */
+  min-height: 25px;
+  /* Ensure it's at least as tall as the icon */
   margin-top: 1.5vh;
   text-decoration: none;
   font-family: 'Times New Roman', Times, serif;
@@ -63,15 +66,24 @@
 /* Targets tablets in both portrait and landscape mode */
 @media (min-width: 601px) and (max-width: 1024px) {
   .DetailsBarWrapper {
-    flex-direction: column; /* Keep column layout but adjust for wrapping links */
-    justify-content: center; /* Center the items horizontally */
-    align-items: center;     /* Center the items vertically */
-    width: 90vw;          /* Make the container wider */
-    height: auto;         /* Adjust height based on content */
-    padding: 15px;        /* Add some internal spacing */
-    margin: 2vh auto;     /* Center the bar on the page */
-    transform: none;      /* Reset the desktop transform */
-    gap: 15px;            /* Add space between the text and contact items */
+    flex-direction: column;
+    /* Keep column layout but adjust for wrapping links */
+    justify-content: center;
+    /* Center the items horizontally */
+    align-items: center;
+    /* Center the items vertically */
+    width: 90vw;
+    /* Make the container wider */
+    height: auto;
+    /* Adjust height based on content */
+    padding: 15px;
+    /* Add some internal spacing */
+    margin: 2vh auto;
+    /* Center the bar on the page */
+    transform: none;
+    /* Reset the desktop transform */
+    gap: 15px;
+    /* Add space between the text and contact items */
   }
 
   /* NEW RULE: Make the container for the links a flex row */
@@ -80,7 +92,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px; /* Add space between the contact links */
+    gap: 15px;
+    /* Add space between the contact links */
   }
 
   /* Reset margins for contact items that are now in a row */
@@ -92,7 +105,8 @@
   }
 
   .TextOne {
-    font-size: 3rem; /* Adjust font size for tablets */
+    font-size: 3rem;
+    /* Adjust font size for tablets */
     margin-bottom: 5px;
   }
 
@@ -100,20 +114,25 @@
     font-size: 1.1rem;
   }
 }
+
 /* === TABLET STYLES END HERE === */
 
 /* === TABLET LANDSCAPE STYLES START HERE === */
 /* Targets tablets specifically in landscape mode to force a single line for text */
 @media (min-width: 768px) and (orientation: landscape) and (max-width: 1300px) {
   .DetailsBarWrapper {
-    flex-wrap: nowrap; /* Prevent items from wrapping to a second line */
+    flex-wrap: nowrap;
+    /* Prevent items from wrapping to a second line */
   }
 
-  .TextOne, .TextTwo {
+  .TextOne,
+  .TextTwo {
     font-size: 3vh;
-     white-space: nowrap; /* Prevent the text itself from wrapping */
+    white-space: nowrap;
+    /* Prevent the text itself from wrapping */
   }
 }
+
 /* === TABLET LANDSCAPE STYLES END HERE === */
 
 
@@ -122,7 +141,8 @@
   .DetailsBarWrapper {
     width: 90vw !important;
     height: auto !important;
-    margin: 1vh auto !important; /* center horizontally with auto */
+    margin: 1vh auto !important;
+    /* center horizontally with auto */
     transform: none !important;
     padding: 1vh 2vw !important;
   }
@@ -143,8 +163,11 @@
   }
 
   .ContactText {
-    font-size: .9rem !important;
-    padding-left: 0.5vh !important;
+    
+    justify-content: center !important;
+    text-align: center !important;
+    padding-top: 1.5vh;
+   
   }
 
   .TextOne {
@@ -152,4 +175,3 @@
     margin-bottom: 1.5vh !important;
   }
 }
-

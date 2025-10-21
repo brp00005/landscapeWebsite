@@ -1,3 +1,5 @@
+file watcher limit increase: echo fs.inotify.max_user_watches= 131070 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
 npm start
 
 version error for 0.0.0?

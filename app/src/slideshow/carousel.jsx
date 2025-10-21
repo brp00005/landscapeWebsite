@@ -58,12 +58,14 @@ const ImageCarousel = () => {
 
                 <Link to="/contact">
                     <Button type="primary" className="contactButton">
-                        <div className="contactContent">
+                        <div className="contactContainer">
                             <div>Contact Us!</div>
-                            {/* <a href="tel:+1-856-373-3455" className="ContactsWrapper">
-                                <Icon.Phone size={25} color="#088a36" />
-                                <div className="ContactText">Cell: 856-373-3455</div>
-                            </a> */}
+                            <div className="buttonNumber">
+                                <Icon.Phone size={20} color="#088a36" style={{ marginRight: '0.5rem' }} />
+                                <a href="tel:+1-856-373-3455" className="buttonWrapper" style={{ textDecoration: 'none' }}>
+                                    <div style={{ fontSize: '1.5rem', color: '#fff' }}>856-373-3455</div>
+                                </a>
+                            </div>
                         </div>
                     </Button>
                 </Link>

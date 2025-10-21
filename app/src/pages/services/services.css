@@ -109,7 +109,7 @@ header.major p {
     width: 50%;
 }
 
-.features li:nth-child(1) { background-color: rgba(0, 0, 0, 0.25); }
+.features li:nth-child(1) { background-color: rgba(0, 0, 0, 0.45); }
 .features li:nth-child(2) { background-color: rgba(0, 0, 0, 0.3); }
 .features li:nth-child(3) { background-color: rgba(0, 0, 0, 0.2); }
 .features li:nth-child(4) { background-color: rgba(0, 0, 0, 0.4); }
