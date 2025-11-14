@@ -8,7 +8,7 @@ import img6 from './employees/6.jpg';
 import img7 from './employees/7.jpg';
 import * as Icon from 'react-feather';
 
-import background from '../../slideshow/25.webp';
+import background from '../../slideshow/fullRes/25.webp';
 
 const About = () => {
     const employeeImages = [img1, img2, img3, img4, img5, img6, img7];
